@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmer Welfare Schemes — LBRCE Rural Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f4f7fc;color:#0d1b35}
+a{text-decoration:none;color:inherit}
+.en{display:block}.te{display:none}span.en{display:inline}span.te{display:none}
+body.telugu .en{display:none}body.telugu .te{display:block}
+body.telugu span.en{display:none}body.telugu span.te{display:inline}
+body.telugu{font-family:'Noto Sans Telugu','DM Sans',sans-serif}
+.banner{background:#0d2a5e;color:#cde;text-align:center;padding:7px;font-size:12px}
+.banner em{color:#93bcf5;font-style:normal}
+header{background:#1a3f8f;border-bottom:4px solid #2558c8;position:sticky;top:0;z-index:9}
+.hrow{max-width:1100px;margin:auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:14px}
+.logo{color:white;font-weight:700;font-size:15px;line-height:1.3}
+.logo small{display:block;font-size:10px;color:rgba(255,255,255,0.5);font-weight:400}
+nav a{color:rgba(255,255,255,0.78);font-size:13px;padding:6px 10px;border-radius:5px}
+nav a:hover{background:rgba(255,255,255,0.12);color:white}
+nav a.active{background:rgba(255,255,255,0.18);color:white}
+.ltbtn{display:flex;gap:4px;margin-left:auto}
+.ltbtn button{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.2);padding:4px 11px;border-radius:14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.ltbtn button.on{background:white;color:#1a3f8f}
+.hero{background:#1a3f8f;color:white;padding:40px 20px 55px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:40px;background:#f4f7fc;clip-path:ellipse(55% 100% at 50% 100%)}
+.hero .badge{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:4px 14px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;display:inline-block;margin-bottom:14px}
+.hero h1{font-size:2rem;margin-bottom:8px}
+.hero p{color:rgba(255,255,255,0.72);font-size:14px}
+main{max-width:1000px;margin:auto;padding:28px 20px 50px}
+.back{display:inline-flex;align-items:center;gap:6px;color:#2558c8;font-size:13px;font-weight:600;margin-bottom:20px}
+.intro{background:#eef4fd;border:1.5px solid #dce8fa;border-radius:12px;padding:16px 20px;margin-bottom:24px;font-size:13.5px;color:#4a5a7a;line-height:1.6}
+.scheme{background:white;border:1.5px solid #c8d8f0;border-radius:14px;margin-bottom:20px;overflow:hidden}
+.scheme-head{background:#1a3f8f;padding:16px 20px;display:flex;align-items:center;gap:12px}
+.snum{background:white;color:#1a3f8f;font-weight:700;font-size:14px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.scheme-head h2{color:white;font-size:1rem;line-height:1.3}
+.scheme-head h2 small{display:block;font-size:11.5px;color:rgba(255,255,255,0.62);font-weight:400;margin-top:2px}
+.scheme-body{padding:18px 20px}
+.ministry{display:inline-block;background:#eef4fd;color:#2558c8;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:20px;margin-bottom:12px}
+.desc{font-size:13.5px;color:#4a5a7a;line-height:1.6;margin-bottom:14px}
+.elig-title{font-size:13px;font-weight:700;color:#0d2a5e;margin-bottom:8px}
+.elig-list{list-style:none;margin-bottom:14px}
+.elig-list li{font-size:13px;color:#4a5a7a;padding:5px 0 5px 20px;border-bottom:1px solid #f0f4fb;position:relative;line-height:1.5}
+.elig-list li:last-child{border-bottom:none}
+.elig-list li::before{content:'✓';position:absolute;left:0;color:#2558c8;font-weight:700;font-size:12px}
+.olink{display:inline-flex;align-items:center;gap:7px;background:#2558c8;color:white;padding:10px 18px;border-radius:10px;font-size:13.5px;font-weight:700;margin-top:6px}
+.olink:hover{background:#0d2a5e}
+.olink svg{width:15px;height:15px;fill:none;stroke:white;stroke-width:2;flex-shrink:0}
+footer{background:#0d2a5e;color:rgba(255,255,255,0.65);margin-top:10px;text-align:center}
+.finner{max-width:1100px;margin:auto;padding:22px 20px}
+.finner p{font-size:12px;line-height:1.7}
+.finner .flinks{margin-top:10px}
+.finner .flinks a{color:#93bcf5;font-size:12px;margin:0 10px}
+.fbot{padding:10px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;color:rgba(255,255,255,0.3)}
+@media(max-width:768px){nav{display:none}.scheme-head{flex-direction:column;align-items:flex-start;gap:8px}}
+</style>
+</head>
+<body>
+<div class="banner">An initiative by <em>Lakireddy Balireddy College of Engineering (LBRCE)</em>, Mylavaram, Andhra Pradesh</div>
+<header>
+  <div class="hrow">
+    <a href="/" class="logo"><span class="en">Rural Schemes Portal</span><span class="te">గ్రామీణ పథకాల పోర్టల్</span><small>LBRCE Initiative · Mylavaram, AP</small></a>
+    <nav><a href="/">Home</a><a href="/schemes">All Schemes</a><a href="/category/farmers" class="active">Farmers</a><a href="/helplines">Helplines</a></nav>
+    <div class="ltbtn"><button id="bEN" class="on" onclick="setLang('en')">EN</button><button id="bTE" onclick="setLang('te')">తె</button></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="badge">🌾 <span class="en">Farmer Welfare &amp; Agricultural Schemes</span><span class="te">రైతు సంక్షేమం &amp; వ్యవసాయ పథకాలు</span></div>
+  <h1 class="en">Agricultural Schemes for Rural India</h1>
+  <h1 class="te">గ్రామీణ భారత్ కోసం వ్యవసాయ పథకాలు</h1>
+  <p class="en">8 government schemes providing income support, insurance and benefits to farmers</p>
+  <p class="te">రైతులకు ఆదాయ మద్దతు, బీమా మరియు ప్రయోజనాలను అందించే 8 ప్రభుత్వ పథకాలు</p>
+</div>
+
+<main>
+  <a href="/" class="back">← <span class="en">Back to Home</span><span class="te">హోమ్‌కు తిరిగి వెళ్ళండి</span></a>
+  <div class="intro">
+    <p class="en">The Government of India provides several farmer welfare schemes for rural citizens covering agriculture, irrigation, crop insurance, pensions and financial assistance.</p>
+    <p class="te">భారత ప్రభుత్వం రైతుల కోసం వ్యవసాయం, సాగునీరు, పంట బీమా, పెన్షన్ మరియు ఆర్థిక సహాయాన్ని అందించే అనేక పథకాలను అందిస్తోంది.</p>
+  </div>
+
+  <!-- Scheme template repeated 8 times -->
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">1</div><h2>PM-KISAN<small>Pradhan Mantri Kisan Samman Nidhi</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Agriculture &amp; Farmers Welfare</span>
+      <div class="desc en">Provides ₹6,000 yearly financial support directly to eligible farmer families in 3 installments of ₹2,000 each.</div>
+      <div class="desc te">అర్హులైన రైతు కుటుంబాలకు సంవత్సరానికి ₹6,000 ఆర్థిక సహాయం 3 వాయిదాల్లో నేరుగా అందించబడుతుంది.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Must own cultivable land</li><li>Indian citizen with valid Aadhaar</li><li>Valid bank account required</li><li>Income tax payers not eligible</li></ul>
+      <ul class="elig-list te"><li>సాగు భూమి కలిగి ఉండాలి</li><li>ఆధార్ కార్డు గల భారత పౌరుడు</li><li>బ్యాంక్ ఖాతా అవసరం</li><li>ఆదాయపు పన్ను చెల్లింపుదారులు అర్హులు కారు</li></ul>
+      <a class="olink" href="https://pmkisan.gov.in/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — pmkisan.gov.in</span><span class="te">అధికారిక పోర్టల్ సందర్శించండి</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">2</div><h2>PMFBY<small>Pradhan Mantri Fasal Bima Yojana</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Crop Insurance Scheme</span>
+      <div class="desc en">Provides crop insurance against natural disasters, pest attacks and crop loss for all notified crops.</div>
+      <div class="desc te">ప్రకటిత పంటలకు ప్రకృతి విపత్తులు, చీడపీడలు మరియు పంట నష్టాలపై బీమా రక్షణ అందిస్తుంది.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>All farmers growing notified crops</li><li>Both loanee and non-loanee farmers eligible</li><li>Must enroll before sowing season cutoff</li></ul>
+      <ul class="elig-list te"><li>ప్రకటిత పంటలను సాగు చేసే అన్ని రైతులు</li><li>రుణగ్రహీతలు మరియు ఇతర రైతులు అర్హులు</li><li>విత్తు కాలానికి ముందు నమోదు చేయాలి</li></ul>
+      <a class="olink" href="https://pmfby.gov.in/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — pmfby.gov.in</span><span class="te">అధికారిక పోర్టల్ సందర్శించండి</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">3</div><h2>Kisan Credit Card<small>Agriculture Short-Term Loan Scheme</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">NABARD</span>
+      <div class="desc en">Provides low-interest short-term credit for seeds, fertilizers, farming equipment and post-harvest expenses.</div>
+      <div class="desc te">విత్తనాలు, ఎరువులు, వ్యవసాయ పరికరాలు మరియు పంట కోత తర్వాత ఖర్చులకు తక్కువ వడ్డీ రుణాలు.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Farmers engaged in agriculture or allied activities</li><li>Tenant farmers and oral lessees also eligible</li><li>Land or crop documents required</li></ul>
+      <ul class="elig-list te"><li>వ్యవసాయం మరియు అనుబంధ కార్యకలాపాల్లో నిమగ్నమైన రైతులు</li><li>కౌలు రైతులు మరియు మౌఖిక లీజుదారులు కూడా అర్హులు</li><li>భూమి లేదా పంట పత్రాలు అవసరం</li></ul>
+      <a class="olink" href="https://www.nabard.org/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — nabard.org</span><span class="te">అధికారిక పోర్టల్ సందర్శించండి</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">4</div><h2>PM-KUSUM<small>Solar Pump &amp; Renewable Energy Scheme</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of New &amp; Renewable Energy</span>
+      <div class="desc en">Supports installation of solar irrigation pumps and solar power plants on farm land with up to 60% government subsidy.</div>
+      <div class="desc te">వ్యవసాయ భూమిలో సౌర సాగునీటి పంపులు మరియు సౌర విద్యుత్ కేంద్రాలు ఏర్పాటుకు 60% వరకు ప్రభుత్వ సబ్సిడీ.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Must own agricultural land with irrigation source</li><li>Individual farmers and farmer groups eligible</li><li>Water User Associations also eligible</li></ul>
+      <ul class="elig-list te"><li>సాగునీటి వనరుతో వ్యవసాయ భూమి కలిగి ఉండాలి</li><li>వ్యక్తిగత రైతులు మరియు రైతు సమూహాలు అర్హులు</li><li>నీటి వినియోగదారుల సంఘాలు కూడా అర్హులు</li></ul>
+      <a class="olink" href="https://pmkusum.mnre.gov.in/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — pmkusum.mnre.gov.in</span><span class="te">అధికారిక పోర్టల్ సందర్శించండి</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">5</div><h2>Soil Health Card Scheme<small>Soil Testing &amp; Fertility Improvement</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Agriculture &amp; Farmers Welfare</span>
+      <div class="desc en">Provides free soil testing and a Soil Health Card with fertilizer recommendations to improve crop productivity.</div>
+      <div class="desc te">పంట ఉత్పాదకత మెరుగుపరచడానికి ఉచిత మట్టి పరీక్ష మరియు ఎరువుల సిఫారసులతో సాయిల్ హెల్త్ కార్డు అందిస్తుంది.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>All farmers with agricultural land are eligible</li><li>Soil sample submission at nearest KVK or Agriculture office</li><li>Card issued once every 2 years</li></ul>
+      <ul class="elig-list te"><li>వ్యవసాయ భూమి గల అన్ని రైతులు అర్హులు</li><li>సమీప KVK లేదా వ్యవసాయ కార్యాలయంలో మట్టి నమూనా సమర్పించాలి</li><li>ప్రతి 2 సంవత్సరాలకు ఒకసారి కార్డు జారీ చేయబడుతుంది</li></ul>
+      <a class="olink" href="https://soilhealth.dac.gov.in/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — soilhealth.dac.gov.in</span><span class="te">అధికారిక పోర్టల్ సందర్శించండి</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">6</div><h2>PKVY — Paramparagat Krishi Vikas Yojana<small>Organic Farming Promotion Scheme</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Agriculture &amp; Farmers Welfare</span>
+      <div class="desc en">Promotes organic farming with ₹50,000/hectare financial assistance for certification, inputs and marketing support over 3 years.</div>
+      <div class="desc te">3 సంవత్సరాల్లో సర్టిఫికేషన్, ఇన్‌పుట్లు మరియు మార్కెటింగ్ సహాయం కోసం హెక్టారుకు ₹50,000 ఆర్థిక సహాయంతో సేంద్రీయ వ్యవసాయాన్ని ప్రోత్సహిస్తుంది.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Farmers interested in organic farming practices</li><li>Farmer clusters of minimum 50 acres required</li><li>Must avoid chemical fertilizers and pesticides</li></ul>
+      <ul class="elig-list te"><li>సేంద్రీయ వ్యవసాయంపై ఆసక్తి ఉన్న రైతులు</li><li>కనీసం 50 ఎకరాల రైతు క్లస్టర్లు అవసరం</li><li>రసాయన ఎరువులు మరియు పురుగుమందులు ఉపయోగించకూడదు</li></ul>
+      <a class="olink" href="https://pgsindia-ncof.gov.in/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — pgsindia-ncof.gov.in</span><span class="te">అధికారిక పోర్టల్ సందర్శించండి</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">7</div><h2>PM Kisan Maandhan Yojana<small>Farmers Pension Scheme</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Agriculture &amp; Farmers Welfare</span>
+      <div class="desc en">Provides a monthly pension of ₹3,000 to small and marginal farmers after the age of 60 years.</div>
+      <div class="desc te">60 సంవత్సరాల తర్వాత చిన్న మరియు సన్నకారు రైతులకు నెలకు ₹3,000 పెన్షన్ అందిస్తుంది.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Age between 18 and 40 years at enrollment</li><li>Small or marginal farmer (land up to 2 hectares)</li><li>Monthly contribution of ₹55–₹200 required</li></ul>
+      <ul class="elig-list te"><li>నమోదు సమయంలో వయస్సు 18 నుండి 40 సంవత్సరాల మధ్య</li><li>చిన్న లేదా సన్నకారు రైతు (2 హెక్టారుల వరకు భూమి)</li><li>నెలకు ₹55–₹200 చందా చెల్లించాలి</li></ul>
+      <a class="olink" href="https://maandhan.in/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — maandhan.in</span><span class="te">అధికారిక పోర్టల్ సందర్శించండి</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">8</div><h2>e-NAM<small>National Agriculture Market — Online Trading Platform</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Agriculture &amp; Farmers Welfare</span>
+      <div class="desc en">An online trading platform connecting farmers to mandis across India, enabling them to sell produce at better prices without middlemen.</div>
+      <div class="desc te">రైతులను దేశవ్యాప్తంగా మండీలతో అనుసంధానించే ఆన్‌లైన్ వేదిక, దళారీలు లేకుండా మంచి ధరకు అమ్ముకునే అవకాశం.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Farmers registered with local mandi or APMC</li><li>Valid government ID proof required</li><li>Bank account required for digital payments</li></ul>
+      <ul class="elig-list te"><li>స్థానిక మండీ లేదా APMCలో నమోదు చేసిన రైతులు</li><li>చెల్లుబాటు అయ్యే ప్రభుత్వ గుర్తింపు కార్డు అవసరం</li><li>డిజిటల్ చెల్లింపులకు బ్యాంక్ ఖాతా అవసరం</li></ul>
+      <a class="olink" href="https://www.enam.gov.in/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — enam.gov.in</span><span class="te">అధికారిక పోర్టల్ సందర్శించండి</span></a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="finner">
+    <p><strong style="color:white;">Lakireddy Balireddy College of Engineering (LBRCE)</strong> · Mylavaram, Andhra Pradesh<br><span style="font-size:11px;color:rgba(255,255,255,0.42);">Information is for awareness only. Always verify and apply through official government portals.</span></p>
+    <div class="flinks"><a href="/">Home</a><a href="/schemes">All Schemes</a><a href="/helplines">Helplines</a></div>
+  </div>
+  <div class="fbot">© 2025 Lakireddy Balireddy College of Engineering (LBRCE) · Rural Schemes Portal</div>
+</footer>
+
+<script>
+var lang = localStorage.getItem("lang") || "en";
+setLang(lang);
+function setLang(l) {
+  lang = l;
+  localStorage.setItem("lang", l);
+  if (l === "te") document.body.classList.add("telugu");
+  else document.body.classList.remove("telugu");
+  document.getElementById("bEN").className = (l === "en") ? "on" : "";
+  document.getElementById("bTE").className = (l === "te") ? "on" : "";
+}
+</script>
+</body>
+</html>

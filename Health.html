@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Schemes — LBRCE Rural Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f4f7fc;color:#0d1b35}
+a{text-decoration:none;color:inherit}
+.en{display:block}.te{display:none}span.en{display:inline}span.te{display:none}
+body.telugu .en{display:none}body.telugu .te{display:block}
+body.telugu span.en{display:none}body.telugu span.te{display:inline}
+body.telugu{font-family:'Noto Sans Telugu','DM Sans',sans-serif}
+.banner{background:#0d2a5e;color:#cde;text-align:center;padding:7px;font-size:12px}
+.banner em{color:#93bcf5;font-style:normal}
+header{background:#1a3f8f;border-bottom:4px solid #2558c8;position:sticky;top:0;z-index:9}
+.hrow{max-width:1100px;margin:auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:14px}
+.logo{color:white;font-weight:700;font-size:15px;line-height:1.3}
+.logo small{display:block;font-size:10px;color:rgba(255,255,255,0.5);font-weight:400}
+nav a{color:rgba(255,255,255,0.78);font-size:13px;padding:6px 10px;border-radius:5px}
+nav a:hover{background:rgba(255,255,255,0.12);color:white}
+nav a.active{background:rgba(255,255,255,0.18);color:white}
+.ltbtn{display:flex;gap:4px;margin-left:auto}
+.ltbtn button{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.2);padding:4px 11px;border-radius:14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.ltbtn button.on{background:white;color:#1a3f8f}
+.hero{background:#1a3f8f;color:white;padding:40px 20px 52px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:40px;background:#f4f7fc;clip-path:ellipse(55% 100% at 50% 100%)}
+.hero .badge{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:4px 14px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;display:inline-block;margin-bottom:14px}
+.hero h1{font-size:2rem;margin-bottom:8px}
+.hero p{color:rgba(255,255,255,0.82);font-size:14px}
+.stats-row{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.stat-box{flex:1;min-width:120px;background:white;border:1.5px solid #c8d8f0;border-radius:12px;padding:14px 16px;text-align:center}
+.stat-box .num{font-size:1.5rem;font-weight:700;color:#2558c8}
+.stat-box .lbl{font-size:11px;color:#6a7a9a;margin-top:3px;line-height:1.4}
+main{max-width:1000px;margin:auto;padding:28px 20px 50px}
+.back{display:inline-flex;align-items:center;gap:6px;color:#2558c8;font-size:13px;font-weight:600;margin-bottom:20px}
+.intro{background:#eef4fd;border:1.5px solid #dce8fa;border-radius:12px;padding:16px 20px;margin-bottom:24px;font-size:13.5px;color:#4a5a7a;line-height:1.6}
+.portals{background:white;border:1.5px solid #c8d8f0;border-radius:14px;margin-bottom:24px;overflow:hidden}
+.portals-head{background:#1a3f8f;padding:12px 20px}
+.portals-head h3{color:white;font-size:.95rem}
+.portal-grid{padding:16px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:9px}
+.pbtn{display:flex;align-items:center;gap:7px;background:#eef4fd;border:1.5px solid #c8d8f0;border-radius:8px;padding:9px 12px;font-size:12px;font-weight:600;color:#2558c8}
+.pbtn:hover{background:#dce8fa;border-color:#2558c8}
+.pbtn svg{width:12px;height:12px;fill:none;stroke:#2558c8;stroke-width:2;flex-shrink:0}
+.scheme{background:white;border:1.5px solid #c8d8f0;border-radius:14px;margin-bottom:20px;overflow:hidden}
+.scheme-head{background:#1a3f8f;padding:16px 20px;display:flex;align-items:center;gap:12px}
+.snum{background:white;color:#1a3f8f;font-weight:700;font-size:14px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.scheme-head h2{color:white;font-size:1rem;line-height:1.35}
+.scheme-head h2 small{display:block;margin-top:2px;font-size:11.5px;color:rgba(255,255,255,0.62);font-weight:400}
+.scheme-body{padding:18px 20px}
+.ministry{display:inline-block;background:#eef4fd;color:#2558c8;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:20px;margin-bottom:12px;border:1px solid #c8d8f0}
+.desc{font-size:13.5px;color:#4a5a7a;line-height:1.6;margin-bottom:14px}
+.elig-title{font-size:13px;font-weight:700;color:#0d2a5e;margin-bottom:8px}
+.elig-list{list-style:none;margin-bottom:14px}
+.elig-list li{position:relative;padding:5px 0 5px 20px;border-bottom:1px solid #f0f4fb;font-size:13px;color:#4a5a7a;line-height:1.5}
+.elig-list li:last-child{border-bottom:none}
+.elig-list li::before{content:'✓';position:absolute;left:0;color:#2558c8;font-weight:700;font-size:12px}
+.olink{display:inline-flex;align-items:center;gap:7px;background:#2558c8;color:white;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600}
+.olink:hover{background:#0d2a5e}
+.olink svg{width:14px;height:14px;fill:none;stroke:white;stroke-width:2}
+footer{background:#0d2a5e;color:rgba(255,255,255,0.65);margin-top:10px;text-align:center}
+.finner{max-width:1100px;margin:auto;padding:22px 20px}
+.finner p{font-size:12px;line-height:1.7}
+.flinks{margin-top:10px}
+.flinks a{color:#93bcf5;font-size:12px;margin:0 10px}
+.fbot{padding:10px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;color:rgba(255,255,255,0.3)}
+</style>
+</head>
+<body>
+<div class="banner">An initiative by <em>Lakireddy Balireddy College of Engineering (LBRCE)</em>, Mylavaram, Andhra Pradesh</div>
+<header>
+  <div class="hrow">
+    <a href="/" class="logo"><span class="en">Rural Schemes Portal</span><span class="te">గ్రామీణ పథకాల పోర్టల్</span><small>LBRCE Initiative · Mylavaram, AP</small></a>
+    <nav><a href="index.html">Home</a><a href="/schemes">All Schemes</a><a href="Health.html" class="active">Health</a><a href="/helplines">Helplines</a></nav>
+    <div class="ltbtn"><button id="bEN" class="on" onclick="setLang('en')">EN</button><button id="bTE" onclick="setLang('te')">తె</button></div>
+  </div>
+</header>
+<div class="hero">
+  <div class="badge">🏥 <span class="en">Health &amp; Medical Schemes</span><span class="te">ఆరోగ్య &amp; వైద్య పథకాలు</span></div>
+  <h1 class="en">Health Schemes for Rural India</h1><h1 class="te">గ్రామీణ భారత్ కోసం ఆరోగ్య పథకాలు</h1>
+  <p class="en">10 government schemes providing healthcare, insurance &amp; medical support to rural citizens</p>
+  <p class="te">గ్రామీణ పౌరులకు ఆరోగ్య సంరక్షణ, బీమా &amp; వైద్య సహాయం అందించే 10 ప్రభుత్వ పథకాలు</p>
+</div>
+<main>
+  <a href="index.html" class="back">← <span class="en">Back to Home</span><span class="te">హోమ్‌కు తిరిగి వెళ్ళండి</span></a>
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">10</div><div class="lbl en">Health Schemes</div><div class="lbl te">ఆరోగ్య పథకాలు</div></div>
+    <div class="stat-box"><div class="num">₹5L+</div><div class="lbl en">Insurance Cover (PMJAY)</div><div class="lbl te">బీమా కవరేజ్</div></div>
+    <div class="stat-box"><div class="num">50Cr+</div><div class="lbl en">Citizens Covered</div><div class="lbl te">లబ్ధిదారులు</div></div>
+    <div class="stat-box"><div class="num">Free</div><div class="lbl en">Most Schemes for BPL</div><div class="lbl te">BPL కుటుంబాలకు ఉచితం</div></div>
+  </div>
+  <div class="intro">
+    <p class="en">These government schemes provide free insurance, free medicines, maternal care, nutrition support, and specialist healthcare at government hospitals — ensuring no rural citizen is denied treatment due to lack of money.</p>
+    <p class="te">ఈ పథకాలు ఉచిత బీమా, ఉచిత మందులు, మాతా సంరక్షణ, పోషకాహార మద్దతు మరియు ప్రభుత్వ ఆసుపత్రులలో నిపుణ వైద్య సేవలను అందిస్తాయి.</p>
+  </div>
+  <div class="portals">
+    <div class="portals-head"><h3>🔗 <span class="en">Quick Access — Official Portals</span><span class="te">అధికారిక పోర్టళ్ళు</span></h3></div>
+    <div class="portal-grid">
+      <a class="pbtn" href="https://pmjay.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>pmjay.gov.in (Ayushman)</a>
+      <a class="pbtn" href="https://nhm.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>nhm.gov.in (NHM)</a>
+      <a class="pbtn" href="https://janaushadhi.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>janaushadhi.gov.in</a>
+      <a class="pbtn" href="https://pmmvy.wcd.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>pmmvy.wcd.gov.in</a>
+      <a class="pbtn" href="https://www.esic.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>esic.in (ESI)</a>
+      <a class="pbtn" href="https://mohfw.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>mohfw.gov.in (MoHFW)</a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">1</div><h2>Ayushman Bharat — PM Jan Arogya Yojana (PMJAY)<small>World's Largest Health Insurance Scheme</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Health &amp; Family Welfare / NHA</span>
+      <div class="desc en">Provides free health insurance of ₹5 lakh per family per year for secondary and tertiary hospitalisation covering 1,500+ procedures including surgery, cancer and critical illness at empanelled hospitals. No premium charged to beneficiaries.</div>
+      <div class="desc te">ద్వితీయ మరియు తృతీయ ఆసుపత్రి చికిత్సకు కుటుంబానికి సంవత్సరానికి ₹5 లక్షల ఉచిత ఆరోగ్య బీమా. 1,500+ వైద్య విధానాలు కవర్ చేయబడతాయి. లబ్ధిదారులకు ప్రీమియం వసూలు చేయబడదు.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Family listed in SECC 2011 database (rural deprived categories)</li><li>No restriction on family size, age, or gender</li><li>Pre-existing conditions covered from Day 1</li><li>Must have Ayushman Card from Common Service Centre</li><li>Valid Aadhaar or Ration Card as identity proof</li></ul>
+      <ul class="elig-list te"><li>SECC 2011 డేటాబేస్‌లో నమోదైన కుటుంబాలు</li><li>కుటుంబ పరిమాణం, వయస్సు లేదా లింగంపై పరిమితి లేదు</li><li>ముందే ఉన్న అనారోగ్యాలు 1వ రోజు నుండి కవర్ చేయబడతాయి</li><li>కామన్ సర్వీస్ సెంటర్ నుండి ఆయుష్మాన్ కార్డ్ కలిగి ఉండాలి</li><li>ఆధార్ లేదా రేషన్ కార్డ్ గుర్తింపు రుజువుగా</li></ul>
+      <a class="olink" href="https://pmjay.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — pmjay.gov.in</span><span class="te">అధికారిక పోర్టల్ — pmjay.gov.in</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">2</div><h2>National Health Mission (NHM)<small>Rural &amp; Urban Health Infrastructure</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Health &amp; Family Welfare</span>
+      <div class="desc en">Strengthens rural healthcare via Sub-Centres, PHCs and CHCs. Provides free medicines, free diagnostics, free OPD, and ASHA workers in every village to connect families to healthcare services.</div>
+      <div class="desc te">PHCs మరియు CHCల నెట్‌వర్క్ ద్వారా గ్రామీణ ఆరోగ్య సేవలను బలపరుస్తుంది. ఉచిత మందులు, ఉచిత OPD, మరియు ప్రతి గ్రామంలో ఆశా కార్యకర్తలు అందుబాటులో ఉంటారు.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>All rural residents eligible for NHM services</li><li>Free OPD, medicines &amp; diagnostics for BPL families at PHCs/CHCs</li><li>Special focus on women, children, SC/ST and tribal populations</li><li>No income proof needed for basic OPD at government centres</li></ul>
+      <ul class="elig-list te"><li>అన్ని గ్రామీణ నివాసులు NHM సేవలకు అర్హులు</li><li>BPL కుటుంబాలకు PHC/CHCలో ఉచిత OPD, మందులు</li><li>మహిళలు, పిల్లలు, SC/ST పై ప్రత్యేక దృష్టి</li><li>ప్రాథమిక OPDకు ఆదాయ రుజువు అవసరం లేదు</li></ul>
+      <a class="olink" href="https://nhm.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — nhm.gov.in</span><span class="te">అధికారిక పోర్టల్ — nhm.gov.in</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">3</div><h2>PM Bhartiya Janaushadhi Pariyojana (PMBJP)<small>Affordable Generic Medicines for All</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Chemicals &amp; Fertilizers / BPPI</span>
+      <div class="desc en">Provides quality generic medicines at 50–90% lower prices through 10,000+ Jan Aushadhi Kendras across India. Over 1,900 medicines and 300 surgical items available.</div>
+      <div class="desc te">10,000+ జన ఔషధి కేంద్రాల ద్వారా బ్రాండ్ మందుల కంటే 50–90% తక్కువ ధరకు నాణ్యమైన జెనరిక్ మందులు. 1,900+ మందులు మరియు 300 శస్త్రచికిత్స వస్తువులు అందుబాటులో.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Any Indian citizen — no BPL card or income proof required</li><li>Medicines sold against valid prescription from a registered doctor</li><li>Special discounts for senior citizens and differently-abled persons</li></ul>
+      <ul class="elig-list te"><li>ఏ భారత పౌరుడైనా — BPL కార్డు లేదా ఆదాయ రుజువు అవసరం లేదు</li><li>నమోదిత వైద్యుని ప్రిస్క్రిప్షన్ మేరకు మందులు</li><li>వృద్ధులు మరియు వికలాంగులకు ప్రత్యేక రాయితీలు</li></ul>
+      <a class="olink" href="https://janaushadhi.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — janaushadhi.gov.in</span><span class="te">అధికారిక పోర్టల్ — janaushadhi.gov.in</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">4</div><h2>PM Matru Vandana Yojana (PMMVY)<small>Maternity Benefit for Pregnant Women</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Women &amp; Child Development</span>
+      <div class="desc en">Provides ₹5,000 cash benefit directly to pregnant and lactating women for the first living child in installments to encourage early registration, institutional delivery and nutrition.</div>
+      <div class="desc te">మొదటి జీవించే శిశువు కోసం గర్భిణీ మరియు పాలిచ్చే మహిళల బ్యాంకు ఖాతాకు నేరుగా ₹5,000 కిస్తీలలో అందించబడుతుంది.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Pregnant and lactating women (first living child)</li><li>Age 19 years or above at time of pregnancy</li><li>Must register at nearest Anganwadi Centre</li><li>Valid Aadhaar and DBT-linked bank account required</li><li>Second girl child also covered under PMMVY 2.0</li></ul>
+      <ul class="elig-list te"><li>గర్భిణీ మరియు పాలిచ్చే మహిళలు (మొదటి శిశువు)</li><li>గర్భం సమయంలో వయస్సు 19 సంవత్సరాలు లేదా అంతకంటే ఎక్కువ</li><li>సమీప అంగన్‌వాడీ కేంద్రంలో నమోదు చేయాలి</li><li>ఆధార్ మరియు DBT-అనుసంధానిత బ్యాంకు ఖాతా అవసరం</li><li>PMMVY 2.0 కింద రెండవ బాలిక కూడా లాభం పొందుతుంది</li></ul>
+      <a class="olink" href="https://pmmvy.wcd.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — pmmvy.wcd.gov.in</span><span class="te">అధికారిక పోర్టల్ — pmmvy.wcd.gov.in</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">5</div><h2>Janani Shishu Suraksha Karyakram (JSSK)<small>Free Maternity &amp; Child Care at Govt Hospitals</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Health &amp; Family Welfare / NHM</span>
+      <div class="desc en">Entitles all pregnant women to free cashless delivery at government hospitals including caesarean, free transport, free medicines, free diet during stay, free diagnostics, and free treatment for sick newborns up to 30 days.</div>
+      <div class="desc te">అన్ని గర్భిణీ మహిళలకు ప్రభుత్వ ఆసుపత్రులలో సిజేరియన్‌తో సహా ఉచిత ప్రసవం, ఉచిత రవాణా, ఉచిత మందులు, ఉచిత ఆహారం మరియు 30 రోజుల వరకు నవజాత శిశువు చికిత్స.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>All pregnant women delivering at government health centres</li><li>Sick newborns up to 30 days at government hospitals</li><li>No income limit — universal entitlement at government facilities</li><li>Free drop-back home after delivery</li></ul>
+      <ul class="elig-list te"><li>ప్రభుత్వ ఆరోగ్య కేంద్రాలలో ప్రసవించే అన్ని గర్భిణీ మహిళలు</li><li>ప్రభుత్వ ఆసుపత్రులలో 30 రోజుల వరకు అనారోగ్య నవజాత శిశువులు</li><li>ఆదాయ పరిమితి లేదు — ప్రభుత్వ సదుపాయాలలో సార్వత్రిక హక్కు</li><li>ప్రసవం తర్వాత ఇంటికి ఉచిత రవాణా</li></ul>
+      <a class="olink" href="https://nhm.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — nhm.gov.in / JSSK</span><span class="te">అధికారిక పోర్టల్ — nhm.gov.in</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">6</div><h2>PM Surakshit Matritva Abhiyan (PMSMA)<small>Free Antenatal Care for High-Risk Pregnancies</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Health &amp; Family Welfare</span>
+      <div class="desc en">Guarantees free antenatal check-up by specialist doctors on the 9th of every month at government health facilities. Identifies high-risk pregnancies early with free blood pressure, blood, urine tests and ultrasound.</div>
+      <div class="desc te">ప్రతి నెల 9వ తేదీన ప్రభుత్వ ఆరోగ్య సదుపాయాలలో నిపుణ వైద్యులు ఉచిత ముందస్తు ప్రసవ పరీక్ష. రక్తపోటు, రక్తం, మూత్ర పరీక్షలు మరియు అల్ట్రాసౌండ్ ఉచితంగా.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>All pregnant women in second or third trimester (4th to 9th month)</li><li>Available at all PHCs, CHCs and District Hospitals</li><li>No BPL or income limit — universal for all pregnant women</li></ul>
+      <ul class="elig-list te"><li>రెండవ లేదా మూడవ త్రైమాసికంలో అన్ని గర్భిణీ మహిళలు</li><li>అన్ని PHCs, CHCs మరియు జిల్లా ఆసుపత్రులలో అందుబాటు</li><li>BPL లేదా ఆదాయ పరిమితి లేదు — అందరికీ సార్వత్రికం</li></ul>
+      <a class="olink" href="https://pmsma.nhp.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — pmsma.nhp.gov.in</span><span class="te">అధికారిక పోర్టల్ — pmsma.nhp.gov.in</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">7</div><h2>Rashtriya Swasthya Bima Yojana (RSBY)<small>Health Insurance for BPL Workers</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Labour &amp; Employment</span>
+      <div class="desc en">Smart card-based cashless health insurance of ₹30,000 per family per year for BPL families and unorganised sector workers. Family of 5 covered. Beneficiary pays only ₹30 as registration fee.</div>
+      <div class="desc te">BPL కుటుంబాలు మరియు అసంఘటిత రంగ కార్మికులకు కుటుంబానికి ₹30,000 స్మార్ట్ కార్డ్ ఆధారిత నగదు రహిత బీమా. 5 సభ్యులకు కవరేజ్. కేవలం ₹30 నమోదు రుసుము.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>BPL families identified by State Government</li><li>Unorganised sector workers — construction, domestic, MGNREGA workers</li><li>Family unit up to 5 members covered</li><li>BPL card / ration card required for registration</li></ul>
+      <ul class="elig-list te"><li>రాష్ట్ర ప్రభుత్వం గుర్తించిన BPL కుటుంబాలు</li><li>నిర్మాణ కార్మికులు, గృహ కార్మికులు, MGNREGA కార్మికులు</li><li>5 సభ్యుల వరకు కుటుంబం కవర్ చేయబడుతుంది</li><li>BPL కార్డ్ / రేషన్ కార్డ్ నమోదుకు అవసరం</li></ul>
+      <a class="olink" href="https://rsby.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — rsby.gov.in</span><span class="te">అధికారిక పోర్టల్ — rsby.gov.in</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">8</div><h2>POSHAN Abhiyan — National Nutrition Mission<small>Reducing Malnutrition in Children &amp; Women</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Women &amp; Child Development</span>
+      <div class="desc en">Reduces stunting, under-nutrition and anaemia in children (0–6 years), adolescent girls, pregnant women and lactating mothers via Anganwadi Centres and community nutrition events.</div>
+      <div class="desc te">పిల్లలలో (0–6 సంవత్సరాలు), కౌమార బాలికలలో మరియు గర్భిణీ మహిళలలో స్టంటింగ్ మరియు రక్తహీనతను తగ్గించడానికి అంగన్‌వాడీ కేంద్రాల ద్వారా పోషక సేవలు.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Children aged 0–6 years registered at Anganwadi Centre</li><li>Pregnant and lactating women in rural areas</li><li>Adolescent girls (11–14 years) in out-of-school categories</li><li>No income restriction — free nutrition for all registered children</li></ul>
+      <ul class="elig-list te"><li>అంగన్‌వాడీ కేంద్రంలో నమోదైన 0–6 సంవత్సరాల పిల్లలు</li><li>గ్రామీణ ప్రాంతాలలో గర్భిణీ మరియు పాలిచ్చే మహిళలు</li><li>పాఠశాల వెలుపల 11–14 సంవత్సరాల కౌమార బాలికలు</li><li>ఆదాయ పరిమితి లేదు — అందరికీ ఉచిత పోషణ సేవలు</li></ul>
+      <a class="olink" href="https://poshanabhiyaan.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — poshanabhiyaan.gov.in</span><span class="te">అధికారిక పోర్టల్ — poshanabhiyaan.gov.in</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">9</div><h2>Employees' State Insurance (ESI) Scheme<small>Medical &amp; Social Security for Workers</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Labour &amp; Employment / ESIC</span>
+      <div class="desc en">Provides comprehensive medical care, sickness cash benefit, maternity benefit and disability benefit to insured workers earning up to ₹21,000/month. Complete treatment including surgery is free at ESIC hospitals.</div>
+      <div class="desc te">నెలకు ₹21,000 వరకు సంపాదించే కార్మికులకు సమగ్ర వైద్య సంరక్షణ, అనారోగ్య నగదు ప్రయోజనం, ప్రసూతి ప్రయోజనం. ESIC ఆసుపత్రులలో పూర్తి చికిత్స ఉచితం.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Employees earning up to ₹21,000/month (₹25,000 for persons with disability)</li><li>Working in ESI Act-notified factories, shops or establishments</li><li>Employer contributes 3.25%; employee contributes 0.75% of wages</li><li>Family members (dependants) get full medical care</li></ul>
+      <ul class="elig-list te"><li>నెలకు ₹21,000 వరకు సంపాదించే ఉద్యోగులు</li><li>ESI చట్టం కింద నోటిఫై చేయబడిన కర్మాగారాలు, దుకాణాలలో పనిచేసేవారు</li><li>యజమాని 3.25%, ఉద్యోగి 0.75% వేతనంలో సహకరిస్తారు</li><li>కుటుంబ సభ్యులకు కూడా పూర్తి వైద్య సంరక్షణ</li></ul>
+      <a class="olink" href="https://www.esic.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — esic.in</span><span class="te">అధికారిక పోర్టల్ — esic.in</span></a>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="scheme-head"><div class="snum">10</div><h2>National Programme for Control of Blindness (NPCBVI)<small>Free Eye Care for Rural Citizens</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Health &amp; Family Welfare / NHM</span>
+      <div class="desc en">Provides free cataract surgery, free spectacles for children and elderly, free treatment for glaucoma and diabetic retinopathy. Mobile eye care units conduct screening camps in remote rural villages.</div>
+      <div class="desc te">ఉచిత కంటి పొర శస్త్రచికిత్స, పిల్లలు మరియు వృద్ధులకు ఉచిత కళ్ళజోళ్ళు, గ్లాకోమా మరియు డయాబెటిక్ రెటినోపతి ఉచిత చికిత్స. మొబైల్ యూనిట్లు గ్రామాల్లో పరీక్ష శిబిరాలు నిర్వహిస్తాయి.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>All citizens — BPL families get free cataract surgery at government hospitals</li><li>School children get free spectacles through eye screening programme</li><li>Elderly persons above 40 years with visual impairment are priority</li><li>No registration required for eye screening camps in villages</li></ul>
+      <ul class="elig-list te"><li>అన్ని పౌరులు — BPL కుటుంబాలకు ఉచిత కంటి పొర శస్త్రచికిత్స</li><li>పాఠశాల పిల్లలకు పరీక్ష ద్వారా ఉచిత కళ్ళజోళ్ళు</li><li>40 సంవత్సరాలు పైన వైజ్ఞానిక బలహీనత కలిగిన వృద్ధులకు ప్రాధాన్యత</li><li>గ్రామాల్లో కంటి శిబిరాలకు నమోదు అవసరం లేదు</li></ul>
+      <a class="olink" href="https://mohfw.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal — mohfw.gov.in</span><span class="te">అధికారిక పోర్టల్ — mohfw.gov.in</span></a>
+    </div>
+  </div>
+
+</main>
+<footer>
+  <div class="finner">
+    <p><strong style="color:white;">Lakireddy Balireddy College of Engineering (LBRCE)</strong> · Mylavaram, Andhra Pradesh<br><span style="font-size:11px;color:rgba(255,255,255,0.42);">Information is for awareness only. Always verify and apply through official government portals.</span></p>
+    <div class="flinks"><a href="/">Home</a><a href="/schemes">All Schemes</a><a href="/helplines">Helplines</a><a href="https://mohfw.gov.in" target="_blank">MoHFW</a></div>
+  </div>
+  <div class="fbot">© 2025 Lakireddy Balireddy College of Engineering (LBRCE) · Rural Schemes Portal</div>
+</footer>
+<script>
+var lang = localStorage.getItem("lang") || "en";
+setLang(lang);
+function setLang(l) {
+  lang = l;
+  localStorage.setItem("lang", l);
+  if (l === "te") document.body.classList.add("telugu");
+  else document.body.classList.remove("telugu");
+  document.getElementById("bEN").className = (l === "en") ? "on" : "";
+  document.getElementById("bTE").className = (l === "te") ? "on" : "";
+}
+</script>
+</body>
+</html>

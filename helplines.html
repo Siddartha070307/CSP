@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helplines — LBRCE Rural Schemes Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f4f7fc;color:#0d1b35}
+a{text-decoration:none;color:inherit}
+.en{display:block}.te{display:none}span.en{display:inline}span.te{display:none}
+body.telugu .en{display:none}body.telugu .te{display:block}body.telugu span.en{display:none}body.telugu span.te{display:inline}
+body.telugu{font-family:'Noto Sans Telugu','DM Sans',sans-serif}
+.banner{background:#0d2a5e;color:#cde;text-align:center;padding:7px;font-size:12px}
+.banner em{color:#93bcf5;font-style:normal}
+header{background:#1a3f8f;border-bottom:4px solid #2558c8;position:sticky;top:0;z-index:9}
+.hrow{max-width:1100px;margin:auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:12px}
+.logo{color:white;font-weight:700;font-size:15px;line-height:1.3}
+.logo small{display:block;font-size:10px;color:rgba(255,255,255,0.5);font-weight:400}
+nav a{color:rgba(255,255,255,0.78);font-size:13px;padding:6px 10px;border-radius:5px}
+nav a:hover{background:rgba(255,255,255,0.12)}
+nav a.active{background:rgba(255,255,255,0.18);color:white;font-weight:600}
+.ltbtn{display:flex;gap:4px;margin-left:auto}
+.ltbtn button{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.2);padding:4px 11px;border-radius:14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.ltbtn button.on{background:white;color:#1a3f8f}
+.hero{background:#c0392b;color:white;text-align:center;padding:36px 20px 50px}
+.hero-label{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:4px 14px;border-radius:4px;font-size:11px;letter-spacing:0.5px;text-transform:uppercase;display:inline-block;margin-bottom:12px}
+.hero h1{font-size:1.9rem;margin-bottom:6px}
+.hero p{color:rgba(255,255,255,0.75);font-size:13.5px}
+.wave{height:36px;background:#f4f7fc;clip-path:ellipse(55% 100% at 50% 100%)}
+main{max-width:1000px;margin:auto;padding:10px 20px 50px}
+.section-title{font-size:1.2rem;font-weight:700;color:#0d2a5e;margin:28px 0 14px;padding-bottom:6px;border-bottom:2px solid #dce8fa}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{background:white;border:1.5px solid #c8d8f0;border-radius:12px;padding:18px 16px;display:flex;align-items:center;gap:14px}
+.card .ico{font-size:1.8rem;flex-shrink:0}
+.card .num{font-size:1.5rem;font-weight:700;color:#c0392b}
+.card .lbl{font-size:12.5px;color:#0d1b35;font-weight:600}
+.card .desc{font-size:11.5px;color:#4a5a7a;margin-top:2px}
+.card a{display:inline-block;margin-top:6px;background:#c0392b;color:white;padding:4px 12px;border-radius:14px;font-size:11.5px;font-weight:600}
+.note{background:#fff8e1;border:1.5px solid #ffe082;border-radius:10px;padding:14px 18px;margin-top:24px;font-size:13px;color:#5d4037;line-height:1.6}
+footer{background:#0d2a5e;color:rgba(255,255,255,0.65);margin-top:10px}
+.frow{max-width:1100px;margin:auto;padding:20px}
+.fn{font-size:1rem;font-weight:700;color:white}
+.fc{font-size:11px;color:#93bcf5;margin-top:3px}
+.fbot{text-align:center;padding:10px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;color:rgba(255,255,255,0.3)}
+@media(max-width:600px){nav{display:none}.grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="banner">An initiative by <em>Lakireddy Balireddy College of Engineering (LBRCE)</em>, Mylavaram, Andhra Pradesh</div>
+<header>
+  <div class="hrow">
+    <a href="/" class="logo"><span class="en">Rural Schemes Portal</span><span class="te">గ్రామీణ పథకాల పోర్టల్</span><small>LBRCE Initiative · Mylavaram, AP</small></a>
+    <nav><a href="/">Home</a><a href="/schemes">All Schemes</a><a href="/helplines" class="active">Helplines</a><a href="/about">About</a></nav>
+    <div class="ltbtn"><button id="bEN" class="on" onclick="setLang('en')">EN</button><button id="bTE" onclick="setLang('te')">తె</button></div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-label">📞 <span class="en">Emergency &amp; Helpline Numbers</span><span class="te">అత్యవసర మరియు హెల్ప్‌లైన్ నంబర్లు</span></div>
+  <h1 class="en">Important Helplines</h1><h1 class="te">ముఖ్యమైన హెల్ప్‌లైన్లు</h1>
+  <p class="en">Free, 24×7 government helplines for rural citizens across India</p>
+  <p class="te">భారతదేశంలోని గ్రామీణ పౌరులకు ఉచిత, 24×7 ప్రభుత్వ హెల్ప్‌లైన్లు</p>
+</div>
+<div class="wave"></div>
+<main>
+  <div class="section-title en">🆘 Emergency Numbers</div>
+  <div class="section-title te">🆘 అత్యవసర నంబర్లు</div>
+  <div class="grid">
+    <div class="card"><div class="ico">🚨</div><div><div class="num">112</div><div class="lbl"><span class="en">National Emergency</span><span class="te">జాతీయ అత్యవసర సేవ</span></div><div class="desc"><span class="en">Police, Fire, Ambulance</span><span class="te">పోలీస్, అగ్నిమాపక, అంబులెన్స్</span></div><a href="tel:112">Call 112</a></div></div>
+    <div class="card"><div class="ico">🏥</div><div><div class="num">108</div><div class="lbl"><span class="en">Ambulance Service</span><span class="te">అంబులెన్స్ సేవ</span></div><div class="desc"><span class="en">Free medical emergency</span><span class="te">ఉచిత వైద్య అత్యవసర సేవ</span></div><a href="tel:108">Call 108</a></div></div>
+    <div class="card"><div class="ico">🚒</div><div><div class="num">101</div><div class="lbl"><span class="en">Fire Service</span><span class="te">అగ్నిమాపక సేవ</span></div><div class="desc"><span class="en">Fire emergency response</span><span class="te">అగ్ని అత్యవసర స్పందన</span></div><a href="tel:101">Call 101</a></div></div>
+    <div class="card"><div class="ico">👮</div><div><div class="num">100</div><div class="lbl"><span class="en">Police Helpline</span><span class="te">పోలీస్ హెల్ప్‌లైన్</span></div><div class="desc"><span class="en">Crime &amp; law enforcement</span><span class="te">నేరం మరియు చట్ట అమలు</span></div><a href="tel:100">Call 100</a></div></div>
+  </div>
+
+  <div class="section-title en">👩 Women &amp; Child Safety</div>
+  <div class="section-title te">👩 మహిళా మరియు శిశు భద్రత</div>
+  <div class="grid">
+    <div class="card"><div class="ico">👩</div><div><div class="num">181</div><div class="lbl"><span class="en">Women Helpline</span><span class="te">మహిళా హెల్ప్‌లైన్</span></div><div class="desc"><span class="en">Violence, abuse, harassment</span><span class="te">హింస, దుర్వినియోగం, వేధింపు</span></div><a href="tel:181">Call 181</a></div></div>
+    <div class="card"><div class="ico">👶</div><div><div class="num">1098</div><div class="lbl"><span class="en">Child Helpline (CHILDLINE)</span><span class="te">చైల్డ్ హెల్ప్‌లైన్</span></div><div class="desc"><span class="en">Children in distress</span><span class="te">కష్టాల్లో ఉన్న పిల్లలకు</span></div><a href="tel:1098">Call 1098</a></div></div>
+    <div class="card"><div class="ico">🏠</div><div><div class="num">181</div><div class="lbl"><span class="en">Domestic Violence</span><span class="te">గృహ హింస</span></div><div class="desc"><span class="en">One Stop Centre referral</span><span class="te">వన్ స్టాప్ సెంటర్ రిఫరల్</span></div><a href="tel:181">Call 181</a></div></div>
+    <div class="card"><div class="ico">🤱</div><div><div class="num">1800-180-1104</div><div class="lbl"><span class="en">Mahila Helpline (WCD)</span><span class="te">మహిళా హెల్ప్‌లైన్ (WCD)</span></div><div class="desc"><span class="en">Ministry women's helpline</span><span class="te">మంత్రిత్వ మహిళా హెల్ప్‌లైన్</span></div><a href="tel:18001801104">Call Now</a></div></div>
+  </div>
+
+  <div class="section-title en">🌾 Farmer &amp; Rural Helplines</div>
+  <div class="section-title te">🌾 రైతు మరియు గ్రామీణ హెల్ప్‌లైన్లు</div>
+  <div class="grid">
+    <div class="card"><div class="ico">🌾</div><div><div class="num">1551</div><div class="lbl"><span class="en">Kisan Call Centre</span><span class="te">కిసాన్ కాల్ సెంటర్</span></div><div class="desc"><span class="en">Agriculture advice &amp; schemes</span><span class="te">వ్యవసాయ సలహా మరియు పథకాలు</span></div><a href="tel:1551">Call 1551</a></div></div>
+    <div class="card"><div class="ico">🏥</div><div><div class="num">104</div><div class="lbl"><span class="en">Health Helpline</span><span class="te">ఆరోగ్య హెల్ప్‌లైన్</span></div><div class="desc"><span class="en">Medical advice &amp; info</span><span class="te">వైద్య సలహా మరియు సమాచారం</span></div><a href="tel:104">Call 104</a></div></div>
+    <div class="card"><div class="ico">💧</div><div><div class="num">1916</div><div class="lbl"><span class="en">Water &amp; Sanitation</span><span class="te">నీరు మరియు పారిశుద్ధ్యం</span></div><div class="desc"><span class="en">Jal Jeevan Mission helpline</span><span class="te">జల్ జీవన్ మిషన్ హెల్ప్‌లైన్</span></div><a href="tel:1916">Call 1916</a></div></div>
+    <div class="card"><div class="ico">⚡</div><div><div class="num">1912</div><div class="lbl"><span class="en">Electricity Helpline</span><span class="te">విద్యుత్ హెల్ప్‌లైన్</span></div><div class="desc"><span class="en">Power complaints &amp; faults</span><span class="te">విద్యుత్ ఫిర్యాదులు మరియు లోపాలు</span></div><a href="tel:1912">Call 1912</a></div></div>
+  </div>
+
+  <div class="section-title en">🏛️ Government Scheme Helplines</div>
+  <div class="section-title te">🏛️ ప్రభుత్వ పథక హెల్ప్‌లైన్లు</div>
+  <div class="grid">
+    <div class="card"><div class="ico">💼</div><div><div class="num">1800-11-0001</div><div class="lbl"><span class="en">MGNREGA Helpline</span><span class="te">MGNREGA హెల్ప్‌లైన్</span></div><div class="desc"><span class="en">Employment guarantee complaints</span><span class="te">ఉపాధి హామీ ఫిర్యాదులు</span></div><a href="tel:18001100001">Call Now</a></div></div>
+    <div class="card"><div class="ico">🏠</div><div><div class="num">1800-11-6446</div><div class="lbl"><span class="en">PMAY Helpline</span><span class="te">PMAY హెల్ప్‌లైన్</span></div><div class="desc"><span class="en">Housing scheme queries</span><span class="te">గృహ పథక సమాచారం</span></div><a href="tel:18001116446">Call Now</a></div></div>
+    <div class="card"><div class="ico">❤️</div><div><div class="num">14555</div><div class="lbl"><span class="en">Ayushman Bharat</span><span class="te">ఆయుష్మాన్ భారత్</span></div><div class="desc"><span class="en">Health insurance helpline</span><span class="te">ఆరోగ్య బీమా హెల్ప్‌లైన్</span></div><a href="tel:14555">Call 14555</a></div></div>
+    <div class="card"><div class="ico">🌱</div><div><div class="num">1800-115-526</div><div class="lbl"><span class="en">PM-KISAN Helpline</span><span class="te">PM-KISAN హెల్ప్‌లైన్</span></div><div class="desc"><span class="en">Farmer income support queries</span><span class="te">రైతు ఆదాయ సహాయ సమాచారం</span></div><a href="tel:1800115526">Call Now</a></div></div>
+  </div>
+
+  <div class="note en">⚠️ <strong>Note:</strong> All numbers above are toll-free and available 24×7 unless specified. In any emergency, always call <strong>112</strong> first. For scheme-related queries, contact your local Gram Panchayat or Block Development Office.</div>
+  <div class="note te">⚠️ <strong>గమనిక:</strong> పైన పేర్కొన్న అన్ని నంబర్లు టోల్-ఫ్రీ మరియు 24×7 అందుబాటులో ఉంటాయి. ఏదైనా అత్యవసర పరిస్థితిలో ముందు <strong>112</strong> కాల్ చేయండి. పథక సంబంధిత సమాచారానికి మీ స్థానిక గ్రామ పంచాయతీ లేదా బ్లాక్ డెవలప్‌మెంట్ కార్యాలయాన్ని సంప్రదించండి.</div>
+</main>
+<footer>
+  <div class="frow"><div class="fn">Rural Schemes Portal</div><div class="fc">A Lakireddy Balireddy College of Engineering (LBRCE) Initiative · Mylavaram, AP</div></div>
+  <div class="fbot">© 2025 Lakireddy Balireddy College of Engineering (LBRCE) · Rural Schemes Portal</div>
+</footer>
+<script>
+var lang = localStorage.getItem("lang") || "en";
+setLang(lang);
+function setLang(l) {
+  lang = l; localStorage.setItem("lang", l);
+  if (l === "te") document.body.classList.add("telugu");
+  else document.body.classList.remove("telugu");
+  document.getElementById("bEN").className = (l === "en") ? "on" : "";
+  document.getElementById("bTE").className = (l === "te") ? "on" : "";
+}
+</script>
+</body>
+</html>

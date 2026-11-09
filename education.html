@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educational Schemes — LBRCE Rural Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f4f7fc;color:#0d1b35}
+a{text-decoration:none;color:inherit}
+.en{display:block}.te{display:none}span.en{display:inline}span.te{display:none}
+body.telugu .en{display:none}body.telugu .te{display:block}
+body.telugu span.en{display:none}body.telugu span.te{display:inline}
+body.telugu{font-family:'Noto Sans Telugu','DM Sans',sans-serif}
+.banner{background:#0d2a5e;color:#cde;text-align:center;padding:7px;font-size:12px}
+.banner em{color:#93bcf5;font-style:normal}
+header{background:#1a3f8f;border-bottom:4px solid #2558c8;position:sticky;top:0;z-index:10}
+.hrow{max-width:1100px;margin:auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:14px}
+.logo{color:white;font-weight:700;font-size:15px;line-height:1.3}
+.logo small{display:block;font-size:10px;color:rgba(255,255,255,0.5);font-weight:400}
+nav a{color:rgba(255,255,255,0.75);font-size:13px;padding:6px 10px;border-radius:5px}
+nav a:hover{background:rgba(255,255,255,0.12);color:white}
+nav a.active{background:rgba(255,255,255,0.18);color:white}
+.ltbtn{display:flex;gap:4px;margin-left:auto}
+.ltbtn button{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.2);padding:4px 11px;border-radius:14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.ltbtn button.on{background:white;color:#1a3f8f}
+.hero{background:#1a3f8f;color:white;padding:40px 20px 52px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:40px;background:#f4f7fc;clip-path:ellipse(55% 100% at 50% 100%)}
+.hero .badge{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:4px 14px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;display:inline-block;margin-bottom:14px}
+.hero h1{font-size:2rem;margin-bottom:8px}
+.hero p{color:rgba(255,255,255,0.75);font-size:14px}
+main{max-width:1000px;margin:auto;padding:28px 20px 50px}
+.back{display:inline-flex;align-items:center;gap:6px;color:#2558c8;font-size:13px;font-weight:600;margin-bottom:20px}
+.intro{background:#eef4fd;border:1.5px solid #dce8fa;border-radius:12px;padding:16px 20px;margin-bottom:24px;font-size:13.5px;color:#4a5a7a;line-height:1.7}
+.scheme{background:white;border:1.5px solid #c8d8f0;border-radius:14px;overflow:hidden;margin-bottom:20px}
+.scheme-head{background:#1a3f8f;padding:16px 20px;display:flex;align-items:center;gap:12px}
+.snum{width:32px;height:32px;border-radius:50%;background:white;color:#1a3f8f;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px}
+.scheme-head h2{color:white;font-size:1rem;line-height:1.35}
+.scheme-head h2 small{display:block;margin-top:2px;font-size:11.5px;color:rgba(255,255,255,0.62);font-weight:400}
+.scheme-body{padding:18px 20px}
+.ministry{display:inline-block;background:#eef4fd;color:#2558c8;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:20px;margin-bottom:12px}
+.desc{font-size:13.5px;color:#4a5a7a;line-height:1.7;margin-bottom:14px}
+.elig-title{font-size:13px;font-weight:700;color:#0d2a5e;margin-bottom:8px}
+.elig-list{list-style:none;margin-bottom:14px}
+.elig-list li{position:relative;padding:5px 0 5px 20px;border-bottom:1px solid #f0f4fb;font-size:13px;color:#4a5a7a;line-height:1.5}
+.elig-list li:last-child{border-bottom:none}
+.elig-list li::before{content:'✓';position:absolute;left:0;color:#2558c8;font-weight:700}
+.olink{display:inline-flex;align-items:center;gap:7px;background:#2558c8;color:white;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:600}
+.olink:hover{background:#0d2a5e}
+.olink svg{width:14px;height:14px;fill:none;stroke:white;stroke-width:2}
+footer{background:#0d2a5e;color:rgba(255,255,255,0.65);text-align:center}
+.finner{max-width:1100px;margin:auto;padding:22px 20px}
+.finner p{font-size:12px;line-height:1.7}
+.flinks a{color:#93bcf5;font-size:12px;margin:0 10px}
+.fbot{padding:10px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;color:rgba(255,255,255,0.3)}
+@media(max-width:768px){nav{display:none}.scheme-head{flex-direction:column;align-items:flex-start;gap:8px}}
+html{scroll-padding-top:100px}.scheme:target{box-shadow:0 0 0 3px #f29f05}
+</style>
+</head>
+<body>
+
+<div class="banner">An initiative by <em>Lakireddy Balireddy College of Engineering (LBRCE)</em>, Mylavaram, Andhra Pradesh</div>
+
+<header>
+  <div class="hrow">
+    <a href="index.html" class="logo"><span class="en">Rural Schemes Portal</span><span class="te">గ్రామీణ పథకాల పోర్టల్</span><small>LBRCE Initiative · Mylavaram, AP</small></a>
+    <nav><a href="index.html">Home</a><a href="index.html#categories">All Schemes</a><a href="education.html" class="active">Education</a><a href="helplines.html">Helplines</a></nav>
+    <div class="ltbtn"><button id="bEN" class="on" onclick="setLang('en')">EN</button><button id="bTE" onclick="setLang('te')">తె</button></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="badge">🎓 <span class="en">Educational Schemes</span><span class="te">విద్యా పథకాలు</span></div>
+  <h1 class="en">Educational Schemes for Rural Students</h1>
+  <h1 class="te">గ్రామీణ విద్యార్థుల కోసం విద్యా పథకాలు</h1>
+  <p class="en">Government schemes supporting scholarships, school education, higher education and skill development</p>
+  <p class="te">స్కాలర్‌షిప్‌లు, పాఠశాల విద్య, ఉన్నత విద్య మరియు నైపుణ్యాభివృద్ధికి మద్దతు ఇచ్చే ప్రభుత్వ పథకాలు</p>
+</div>
+
+<main>
+  <a href="index.html" class="back">← <span class="en">Back to Home</span><span class="te">హోమ్‌కు తిరిగి వెళ్ళండి</span></a>
+  <div class="intro">
+    <p class="en">These government schemes help students from rural and economically weaker backgrounds continue education through scholarships, free meals, hostel support and financial assistance.</p>
+    <p class="te">ఈ పథకాలు గ్రామీణ మరియు ఆర్థికంగా బలహీన వర్గాల విద్యార్థులకు స్కాలర్‌షిప్‌లు, ఉచిత భోజనం, హాస్టల్ మద్దతు ద్వారా విద్య కొనసాగించడానికి సహాయపడతాయి.</p>
+  </div>
+
+  <div class="scheme" id="pm-poshan">
+    <div class="scheme-head"><div class="snum">1</div><h2>PM POSHAN Scheme<small>Mid-Day Meal Programme</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Education</span>
+      <div class="desc en">Provides free nutritious mid-day meals to students in government and aided schools to improve nutrition, attendance and learning outcomes.</div>
+      <div class="desc te">ప్రభుత్వ పాఠశాలల విద్యార్థులకు పోషకాహార మధ్యాహ్న భోజనం అందించి హాజరు మరియు అభ్యాసాన్ని మెరుగుపరుస్తుంది.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Students studying in classes 1 to 8</li><li>Must study in government or aided schools</li><li>Available across rural and urban India</li></ul>
+      <ul class="elig-list te"><li>1 నుండి 8వ తరగతి విద్యార్థులు</li><li>ప్రభుత్వ లేదా ఎయిడెడ్ పాఠశాలలో చదవాలి</li><li>గ్రామీణ మరియు పట్టణ భారతదేశంలో అందుబాటు</li></ul>
+      <a class="olink" href="https://pmposhan.education.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal</span><span class="te">అధికారిక పోర్టల్</span></a>
+    </div>
+  </div>
+
+  <div class="scheme" id="nsp">
+    <div class="scheme-head"><div class="snum">2</div><h2>NSP — National Scholarship Portal<small>Central & State Scholarships</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Government of India</span>
+      <div class="desc en">Single online platform for applying to central and state government scholarships for SC/ST/OBC/minority and economically weaker students.</div>
+      <div class="desc te">SC/ST/OBC/మైనారిటీ మరియు ఆర్థికంగా బలహీన విద్యార్థులకు కేంద్ర మరియు రాష్ట్ర స్కాలర్‌షిప్‌లకు దరఖాస్తు చేసే ఆన్‌లైన్ పోర్టల్.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Indian students in recognised institutions</li><li>Income limits apply for most scholarships</li><li>Valid Aadhaar and bank account required</li></ul>
+      <ul class="elig-list te"><li>గుర్తింపు పొందిన సంస్థలలో చదువుతున్న భారతీయ విద్యార్థులు</li><li>చాలా స్కాలర్‌షిప్‌లకు ఆదాయ పరిమితి ఉంటుంది</li><li>ఆధార్ మరియు బ్యాంక్ ఖాతా అవసరం</li></ul>
+      <a class="olink" href="https://scholarships.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal</span><span class="te">అధికారిక పోర్టల్</span></a>
+    </div>
+  </div>
+
+  <div class="scheme" id="pre-matric">
+    <div class="scheme-head"><div class="snum">3</div><h2>Pre-Matric Scholarship<small>Scholarship for School Students</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Social Justice</span>
+      <div class="desc en">Financial assistance for SC/ST/OBC/Minority school students to continue education from class 1 to 10 without dropping out.</div>
+      <div class="desc te">SC/ST/OBC/మైనారిటీ పాఠశాల విద్యార్థులు 1 నుండి 10వ తరగతి వరకు చదువు కొనసాగించడానికి ఆర్థిక సహాయం.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>SC/ST/OBC/Minority community students</li><li>Studying in classes 1 to 10</li><li>Family income criteria applicable</li></ul>
+      <ul class="elig-list te"><li>SC/ST/OBC/మైనారిటీ విద్యార్థులు</li><li>1 నుండి 10వ తరగతి వరకు చదువుతున్న వారు</li><li>ఆదాయ ప్రమాణాలు వర్తిస్తాయి</li></ul>
+      <a class="olink" href="https://scholarships.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal</span><span class="te">అధికారిక పోర్టల్</span></a>
+    </div>
+  </div>
+
+  <div class="scheme" id="post-matric">
+    <div class="scheme-head"><div class="snum">4</div><h2>Post-Matric Scholarship<small>Higher Education Financial Support</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Education</span>
+      <div class="desc en">Supports students from reserved categories pursuing intermediate, diploma, degree and postgraduate education with fee and maintenance allowance.</div>
+      <div class="desc te">రిజర్వేషన్ వర్గాల విద్యార్థులకు ఇంటర్, డిప్లొమా, డిగ్రీ మరియు పీజీ చదువు కోసం ఫీజు మరియు నిర్వహణ భత్యం.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Students studying after class 10</li><li>SC/ST/OBC/Minority students get priority</li><li>Income certificate required</li></ul>
+      <ul class="elig-list te"><li>10వ తరగతి తర్వాత చదువుతున్న విద్యార్థులు</li><li>SC/ST/OBC/మైనారిటీ విద్యార్థులకు ప్రాధాన్యత</li><li>ఆదాయ ధృవీకరణ పత్రం అవసరం</li></ul>
+      <a class="olink" href="https://scholarships.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal</span><span class="te">అధికారిక పోర్టల్</span></a>
+    </div>
+  </div>
+
+  <div class="scheme" id="aicte-pragati">
+    <div class="scheme-head"><div class="snum">5</div><h2>AICTE Pragati Scholarship<small>Scholarship for Girl Students in Technical Education</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">AICTE</span>
+      <div class="desc en">Financial assistance of ₹50,000/year to girl students pursuing diploma or degree courses in AICTE approved technical institutions.</div>
+      <div class="desc te">AICTE ఆమోదించిన సాంకేతిక సంస్థలలో డిప్లొమా లేదా డిగ్రీ చదువుతున్న బాలికలకు సంవత్సరానికి ₹50,000 ఆర్థిక సహాయం.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Girl students only</li><li>AICTE approved institution admission required</li><li>Annual family income below ₹8 lakh</li></ul>
+      <ul class="elig-list te"><li>బాలికలు మాత్రమే</li><li>AICTE ఆమోదించిన సంస్థలో ప్రవేశం ఉండాలి</li><li>కుటుంబ వార్షిక ఆదాయం ₹8 లక్షల కంటే తక్కువ</li></ul>
+      <a class="olink" href="https://www.aicte-india.org" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal</span><span class="te">అధికారిక పోర్టల్</span></a>
+    </div>
+  </div>
+
+  <div class="scheme" id="pm-yasasvi">
+    <div class="scheme-head"><div class="snum">6</div><h2>PM-YASASVI Scholarship<small>Scholarship for OBC, EBC &amp; DNT Students</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Social Justice</span>
+      <div class="desc en">Provides scholarships to OBC, EBC and DNT students in class 9 and 11 studying in top residential schools across India.</div>
+      <div class="desc te">భారతదేశంలోని టాప్ రెసిడెన్షియల్ పాఠశాలల్లో 9వ మరియు 11వ తరగతి చదువుతున్న OBC, EBC మరియు DNT విద్యార్థులకు స్కాలర్‌షిప్‌లు.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>OBC, EBC or DNT category students</li><li>Studying in class 9 or 11</li><li>Annual family income below ₹2.5 lakh</li></ul>
+      <ul class="elig-list te"><li>OBC, EBC లేదా DNT విద్యార్థులు</li><li>9వ లేదా 11వ తరగతి చదవాలి</li><li>కుటుంబ ఆదాయం ₹2.5 లక్షల లోపు</li></ul>
+      <a class="olink" href="https://yet.nta.ac.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal</span><span class="te">అధికారిక పోర్టల్</span></a>
+    </div>
+  </div>
+
+  <div class="scheme" id="overseas">
+    <div class="scheme-head"><div class="snum">7</div><h2>National Overseas Scholarship<small>Higher Education Abroad for SC/ST</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Social Justice</span>
+      <div class="desc en">Covers full tuition fees, airfare and living expenses for SC/ST students pursuing Masters or PhD studies at top foreign universities.</div>
+      <div class="desc te">విदेশी విశ్వవిద్యాలయాల్లో MA లేదా PhD చదివే SC/ST విద్యార్థులకు పూర్తి ట్యూషన్ ఫీజు, విమాన ఛార్జీలు మరియు జీవన వ్యయం.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>SC/ST students only</li><li>Must secure admission in a foreign university</li><li>Annual family income below ₹8 lakh</li></ul>
+      <ul class="elig-list te"><li>SC/ST విద్యార్థులు మాత్రమే</li><li>విదేశీ విశ్వవిద్యాలయంలో ప్రవేశం ఉండాలి</li><li>కుటుంబ ఆదాయం ₹8 లక్షల లోపు</li></ul>
+      <a class="olink" href="https://nosmsje.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal</span><span class="te">అధికారిక పోర్టల్</span></a>
+    </div>
+  </div>
+
+  <div class="scheme" id="emrs">
+    <div class="scheme-head"><div class="snum">8</div><h2>Eklavya Model Residential Schools (EMRS)<small>Free Residential Education for Tribal Students</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Tribal Affairs</span>
+      <div class="desc en">Provides free residential quality education to ST students from class 6 to 12 in remote and rural tribal areas with sports, culture and digital facilities.</div>
+      <div class="desc te">దూరప్రాంత గిరిజన ప్రాంతాల ST విద్యార్థులకు 6 నుండి 12వ తరగతి వరకు ఉచిత నివాస విద్య, క్రీడలు మరియు డిజిటల్ సౌకర్యాలు.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>ST category students only</li><li>Admission through competitive selection process</li><li>Classes 6 to 12 students in tribal areas</li></ul>
+      <ul class="elig-list te"><li>ST విద్యార్థులు మాత్రమే</li><li>పోటీ ఎంపిక పరీక్ష ద్వారా ప్రవేశం</li><li>గిరిజన ప్రాంతాల్లో 6–12 తరగతి విద్యార్థులు</li></ul>
+      <a class="olink" href="https://tribal.nic.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal</span><span class="te">అధికారిక పోర్టల్</span></a>
+    </div>
+  </div>
+
+  <div class="scheme" id="nats">
+    <div class="scheme-head"><div class="snum">9</div><h2>NATS — National Apprenticeship Training Scheme<small>Paid Internship &amp; Industry Training</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Education</span>
+      <div class="desc en">Provides paid apprenticeship training in industries and government sectors to engineering, diploma and degree students with monthly stipend.</div>
+      <div class="desc te">ఇంజినీరింగ్, డిప్లొమా మరియు డిగ్రీ విద్యార్థులకు పరిశ్రమలు మరియు ప్రభుత్వ రంగాల్లో నెలసరి స్టైఫండ్‌తో పెయిడ్ ఇంటర్న్‌షిప్.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Degree or diploma holders and fresh graduates</li><li>Must register online on NATS portal</li><li>Age limit: 16–35 years</li></ul>
+      <ul class="elig-list te"><li>డిగ్రీ లేదా డిప్లొమా ధారకులు మరియు ఫ్రెషర్స్</li><li>NATS పోర్టల్‌లో ఆన్‌లైన్‌లో నమోదు అవసరం</li><li>వయస్సు పరిమితి: 16–35 సంవత్సరాలు</li></ul>
+      <a class="olink" href="https://nats.education.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal</span><span class="te">అధికారిక పోర్టల్</span></a>
+    </div>
+  </div>
+
+  <div class="scheme" id="kgbv">
+    <div class="scheme-head"><div class="snum">10</div><h2>Kasturba Gandhi Balika Vidyalaya (KGBV)<small>Free Residential Schools for Girls</small></h2></div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Education</span>
+      <div class="desc en">Free residential schooling for girls from SC/ST/OBC/Minority communities in educationally backward rural areas from class 6 to 12.</div>
+      <div class="desc te">SC/ST/OBC/మైనారిటీ వర్గాల బాలికలకు వెనుకబడిన గ్రామీణ ప్రాంతాల్లో 6 నుండి 12వ తరగతి వరకు ఉచిత నివాస పాఠశాల విద్య.</div>
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en"><li>Girls from SC/ST/OBC/Minority communities</li><li>Located in educationally backward rural areas</li><li>Classes 6 to 12 students eligible</li></ul>
+      <ul class="elig-list te"><li>SC/ST/OBC/మైనారిటీ వర్గాల బాలికలు</li><li>వెనుకబడిన గ్రామీణ ప్రాంతాల్లో ఉండాలి</li><li>6–12 తరగతి విద్యార్థులు అర్హులు</li></ul>
+      <a class="olink" href="https://samagra.education.gov.in" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg><span class="en">Visit Official Portal</span><span class="te">అధికారిక పోర్టల్</span></a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="finner">
+    <p><strong style="color:white;">Lakireddy Balireddy College of Engineering (LBRCE)</strong> · Mylavaram, Andhra Pradesh<br><span style="font-size:11px;color:rgba(255,255,255,0.42);">Information is for awareness only. Always verify through official government portals.</span></p>
+    <div class="flinks" style="margin-top:10px;"><a href="index.html">Home</a><a href="index.html#categories">All Schemes</a><a href="helplines.html">Helplines</a></div>
+  </div>
+  <div class="fbot">© 2025 Lakireddy Balireddy College of Engineering (LBRCE) · Rural Schemes Portal</div>
+</footer>
+
+<script>
+var lang = localStorage.getItem("lang") || "en";
+setLang(lang);
+function setLang(l) {
+  lang = l;
+  localStorage.setItem("lang", l);
+  if (l === "te") document.body.classList.add("telugu");
+  else document.body.classList.remove("telugu");
+  document.getElementById("bEN").className = (l === "en") ? "on" : "";
+  document.getElementById("bTE").className = (l === "te") ? "on" : "";
+}
+</script>
+</body>
+</html>

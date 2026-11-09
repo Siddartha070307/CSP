@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employment & Occupation Schemes — LBRCE Rural Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: #f4f7fc; color: #0d1b35; }
+a { text-decoration: none; color: inherit; }
+
+.en { display: block; }
+.te { display: none; }
+span.en { display: inline; }
+span.te { display: none; }
+body.telugu .en { display: none; }
+body.telugu .te { display: block; }
+body.telugu span.en { display: none; }
+body.telugu span.te { display: inline; }
+body.telugu { font-family: 'Noto Sans Telugu', 'DM Sans', sans-serif; }
+
+/* BANNER */
+.banner { background: #0d2a5e; color: #cde; text-align: center; padding: 7px; font-size: 12px; }
+.banner em { color: #93bcf5; font-style: normal; }
+
+/* HEADER */
+header { background: #1a3f8f; border-bottom: 4px solid #2558c8; position: sticky; top: 0; z-index: 9; }
+.hrow { max-width: 1100px; margin: auto; padding: 0 20px; height: 60px; display: flex; align-items: center; gap: 14px; }
+.logo { color: white; font-weight: 700; font-size: 15px; line-height: 1.3; }
+.logo small { display: block; font-size: 10px; color: rgba(255,255,255,0.5); font-weight: 400; }
+nav a { color: rgba(255,255,255,0.78); font-size: 13px; padding: 6px 10px; border-radius: 5px; }
+nav a:hover { background: rgba(255,255,255,0.12); color: white; }
+nav a.active { background: rgba(255,255,255,0.18); color: white; }
+.ltbtn { display: flex; gap: 4px; margin-left: auto; }
+.ltbtn button { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.2); padding: 4px 11px; border-radius: 14px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: inherit; }
+.ltbtn button.on { background: white; color: #1a3f8f; }
+
+/* HERO */
+.page-hero { background: #1a3f8f; color: white; padding: 40px 20px 50px; text-align: center; position: relative; overflow: hidden; }
+.page-hero::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 40px; background: #f4f7fc; clip-path: ellipse(55% 100% at 50% 100%); }
+.page-hero .badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); padding: 4px 14px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-bottom: 14px; }
+.page-hero h1 { font-size: 2rem; margin-bottom: 8px; }
+.page-hero p { color: rgba(255,255,255,0.72); font-size: 14px; }
+
+/* MAIN */
+main { max-width: 1000px; margin: auto; padding: 30px 20px 50px; }
+
+/* INTRO BOX */
+.intro { background: #eef4fd; border: 1.5px solid #dce8fa; border-radius: 12px; padding: 18px 22px; margin-bottom: 30px; }
+.intro p { font-size: 13.5px; color: #4a5a7a; line-height: 1.6; }
+
+/* SCHEME CARD */
+.scheme { background: white; border: 1.5px solid #c8d8f0; border-radius: 14px; margin-bottom: 24px; overflow: hidden; }
+.scheme-head { background: #1a3f8f; padding: 18px 22px; display: flex; align-items: center; gap: 14px; }
+.scheme-num { background: white; color: #1a3f8f; font-weight: 700; font-size: 14px; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.scheme-head h2 { color: white; font-size: 1.05rem; line-height: 1.35; }
+.scheme-head h2 small { display: block; font-size: 12px; color: rgba(255,255,255,0.65); font-weight: 400; margin-top: 2px; }
+.scheme-body { padding: 20px 22px; }
+
+/* MINISTRY TAG */
+.ministry { display: inline-block; background: #eef4fd; color: #2558c8; font-size: 11.5px; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-bottom: 14px; }
+
+/* DESCRIPTION */
+.desc { font-size: 13.5px; color: #4a5a7a; line-height: 1.6; margin-bottom: 16px; }
+
+/* ELIGIBILITY */
+.elig-title { font-size: 13px; font-weight: 700; color: #0d2a5e; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.elig-list { list-style: none; margin-bottom: 16px; }
+.elig-list li { font-size: 13px; color: #4a5a7a; padding: 5px 0 5px 20px; border-bottom: 1px solid #f0f4fb; position: relative; line-height: 1.5; }
+.elig-list li:last-child { border-bottom: none; }
+.elig-list li::before { content: '✓'; position: absolute; left: 0; color: #2558c8; font-weight: 700; font-size: 12px; }
+
+/* OFFICIAL LINK */
+.official-link { display: inline-flex; align-items: center; gap: 7px; background: #2558c8; color: white; padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; margin-top: 4px; transition: background .2s; }
+.official-link:hover { background: #0d2a5e; }
+.official-link svg { width: 14px; height: 14px; fill: none; stroke: white; stroke-width: 2; }
+
+/* BACK LINK */
+.back { display: inline-flex; align-items: center; gap: 6px; color: #2558c8; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
+.back:hover { text-decoration: underline; }
+
+@media(max-width:768px) { nav { display: none; } .scheme-head { flex-direction: column; align-items: flex-start; gap: 8px; } }
+html{scroll-padding-top:100px}.scheme:target{box-shadow:0 0 0 3px #f29f05}
+</style>
+</head>
+<body>
+
+<div class="banner">An initiative by <em>Lakireddy Balireddy College of Engineering (LBRCE)</em>, Mylavaram, Andhra Pradesh</div>
+
+<header>
+  <div class="hrow">
+    <a href="index.html" class="logo">
+      <span class="en">Rural Schemes Portal</span>
+      <span class="te">గ్రామీణ పథకాల పోర్టల్</span>
+      <small>LBRCE Initiative · Mylavaram, AP</small>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#categories">All Schemes</a>
+      <a href="occupation.html" class="active">Employment</a>
+      <a href="helplines.html">Helplines</a>
+    </nav>
+    <div class="ltbtn">
+      <button id="bEN" class="on" onclick="setLang('en')">EN</button>
+      <button id="bTE" onclick="setLang('te')">తె</button>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="badge">💼 <span class="en">Employment & Occupation Schemes</span><span class="te">ఉపాధి & వృత్తి పథకాలు</span></div>
+  <h1 class="en">Occupation Schemes for Rural India</h1>
+  <h1 class="te">గ్రామీణ భారత్ కోసం వృత్తి పథకాలు</h1>
+  <p class="en">7 government schemes that provide employment, skills & livelihood to rural citizens</p>
+  <p class="te">గ్రామీణ పౌరులకు ఉపాధి, నైపుణ్యాలు & జీవనోపాధి కల్పించే 7 ప్రభుత్వ పథకాలు</p>
+</div>
+
+<main>
+
+  <a href="index.html" class="back">← <span class="en">Back to Home</span><span class="te">హోమ్‌కు తిరిగి వెళ్ళండి</span></a>
+
+  <div class="intro">
+    <p class="en">The Indian government runs several occupation and employment schemes specifically targeting rural citizens. These schemes provide wage employment, skill training, self-employment loans, and livelihood support to help rural families earn a stable income.</p>
+    <p class="te">భారత ప్రభుత్వం గ్రామీణ పౌరులను లక్ష్యంగా చేసుకుని అనేక వృత్తి మరియు ఉపాధి పథకాలు నడుపుతోంది. ఈ పథకాలు గ్రామీణ కుటుంబాలకు స్థిరమైన ఆదాయం సంపాదించడంలో సహాయపడటానికి వేతన ఉపాధి, నైపుణ్య శిక్షణ, స్వయం ఉపాధి రుణాలు మరియు జీవనోపాధి మద్దతు అందిస్తాయి.</p>
+  </div>
+
+  <!-- ── SCHEME 1: MGNREGA ── -->
+  <div class="scheme" id="mgnrega">
+    <div class="scheme-head">
+      <div class="scheme-num">1</div>
+      <h2>
+        MGNREGA
+        <small>Mahatma Gandhi National Rural Employment Guarantee Act</small>
+      </h2>
+    </div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Rural Development</span>
+
+      <div class="desc en">MGNREGA guarantees 100 days of wage employment per year to every rural household whose adult members are willing to do unskilled manual work. Wages are paid directly to the worker's bank account within 15 days.</div>
+      <div class="desc te">MGNREGA ప్రతి గ్రామీణ కుటుంబానికి సంవత్సరానికి 100 రోజుల వేతన ఉపాధిని హామీ ఇస్తుంది, దీని వయోజన సభ్యులు నైపుణ్యం లేని శ్రమ పనిచేయడానికి సిద్ధంగా ఉంటారు. వేతనాలు 15 రోజులలో నేరుగా కార్మికుని బ్యాంకు ఖాతాకు చెల్లించబడతాయి.</div>
+
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en">
+        <li>Must be a resident of rural area (village panchayat)</li>
+        <li>Age 18 years or above</li>
+        <li>Willing to do unskilled manual work</li>
+        <li>Must register with local Gram Panchayat and get a Job Card</li>
+        <li>Indian citizen only</li>
+      </ul>
+      <ul class="elig-list te">
+        <li>గ్రామీణ ప్రాంత నివాసి (గ్రామ పంచాయతీ) అయి ఉండాలి</li>
+        <li>వయస్సు 18 సంవత్సరాలు లేదా అంతకంటే ఎక్కువ</li>
+        <li>నైపుణ్యం లేని శ్రమ పనిచేయడానికి సిద్ధంగా ఉండాలి</li>
+        <li>స్థానిక గ్రామ పంచాయతీలో నమోదు చేసుకుని జాబ్ కార్డ్ పొందాలి</li>
+        <li>భారత పౌరులు మాత్రమే</li>
+      </ul>
+
+      <a class="official-link" href="https://nrega.nic.in" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        <span class="en">Visit Official Portal — nrega.nic.in</span>
+        <span class="te">అధికారిక పోర్టల్ సందర్శించండి — nrega.nic.in</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── SCHEME 2: PMKVY ── -->
+  <div class="scheme" id="pmkvy">
+    <div class="scheme-head">
+      <div class="scheme-num">2</div>
+      <h2>
+        PMKVY — Pradhan Mantri Kaushal Vikas Yojana
+        <small>Skill India Mission</small>
+      </h2>
+    </div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Skill Development & Entrepreneurship</span>
+
+      <div class="desc en">PMKVY provides free short-term skill training to youth in over 300 job roles across sectors like construction, electronics, healthcare, agriculture, and retail. After training, candidates receive a government-recognised certificate and placement support.</div>
+      <div class="desc te">PMKVY నిర్మాణం, ఎలక్ట్రానిక్స్, ఆరోగ్య సంరక్షణ, వ్యవసాయం మరియు రిటైల్ వంటి రంగాలలో 300 కంటే ఎక్కువ ఉద్యోగ పాత్రలలో యువతకు ఉచిత స్వల్పకాలిక నైపుణ్య శిక్షణను అందిస్తుంది. శిక్షణ తర్వాత, అభ్యర్థులు ప్రభుత్వ గుర్తింపు పొందిన సర్టిఫికేట్ మరియు ప్లేస్‌మెంట్ మద్దతు పొందుతారు.</div>
+
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en">
+        <li>Age between 15 to 45 years</li>
+        <li>Indian citizen</li>
+        <li>School dropout or currently unemployed youth</li>
+        <li>Valid Aadhaar card required</li>
+        <li>No specific educational qualification required for most courses</li>
+      </ul>
+      <ul class="elig-list te">
+        <li>వయస్సు 15 నుండి 45 సంవత్సరాల మధ్య</li>
+        <li>భారత పౌరుడు</li>
+        <li>పాఠశాల విద్యను వదిలేసిన లేదా ప్రస్తుతం నిరుద్యోగులైన యువకులు</li>
+        <li>చెల్లుబాటు అయ్యే ఆధార్ కార్డు అవసరం</li>
+        <li>చాలా కోర్సులకు నిర్దిష్ట విద్యార్హత అవసరం లేదు</li>
+      </ul>
+
+      <a class="official-link" href="https://pmkvyofficial.org" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        <span class="en">Visit Official Portal — pmkvyofficial.org</span>
+        <span class="te">అధికారిక పోర్టల్ సందర్శించండి — pmkvyofficial.org</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── SCHEME 3: MUDRA YOJANA ── -->
+  <div class="scheme" id="mudra">
+    <div class="scheme-head">
+      <div class="scheme-num">3</div>
+      <h2>
+        Pradhan Mantri MUDRA Yojana (PMMY)
+        <small>Micro Units Development & Refinance Agency</small>
+      </h2>
+    </div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Finance</span>
+
+      <div class="desc en">MUDRA provides collateral-free loans up to ₹10 lakh to small and micro businesses in rural and semi-urban areas. Loans are given under 3 categories — Shishu (up to ₹50,000), Kishore (₹50,000–₹5 lakh), and Tarun (₹5–₹10 lakh).</div>
+      <div class="desc te">MUDRA గ్రామీణ మరియు పాక్షిక పట్టణ ప్రాంతాలలో చిన్న మరియు మైక్రో వ్యాపారాలకు ₹10 లక్షల వరకు హామీ లేని రుణాలను అందిస్తుంది. రుణాలు 3 వర్గాలలో ఇవ్వబడతాయి — శిశు (₹50,000 వరకు), కిశోర్ (₹50,000–₹5 లక్షలు), మరియు తరుణ్ (₹5–₹10 లక్షలు).</div>
+
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en">
+        <li>Indian citizen aged 18 years or above</li>
+        <li>Must own or plan to start a small/micro business</li>
+        <li>No criminal record or loan default history</li>
+        <li>Business should be in non-farm sectors (trading, manufacturing, services)</li>
+        <li>No collateral required for loans up to ₹10 lakh</li>
+      </ul>
+      <ul class="elig-list te">
+        <li>18 సంవత్సరాలు లేదా అంతకంటే ఎక్కువ వయస్సు గల భారత పౌరుడు</li>
+        <li>చిన్న/మైక్రో వ్యాపారాన్ని కలిగి ఉండాలి లేదా ప్రారంభించాలని ప్లాన్ చేయాలి</li>
+        <li>నేర చరిత్ర లేదా రుణ డిఫాల్ట్ చరిత్ర ఉండకూడదు</li>
+        <li>వ్యాపారం వ్యవసాయేతర రంగాలలో (వ్యాపారం, తయారీ, సేవలు) ఉండాలి</li>
+        <li>₹10 లక్షల వరకు రుణాలకు హామీ అవసరం లేదు</li>
+      </ul>
+
+      <a class="official-link" href="https://www.mudra.org.in" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        <span class="en">Visit Official Portal — mudra.org.in</span>
+        <span class="te">అధికారిక పోర్టల్ సందర్శించండి — mudra.org.in</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── SCHEME 4: DDU-GKY ── -->
+  <div class="scheme" id="ddu-gky">
+    <div class="scheme-head">
+      <div class="scheme-num">4</div>
+      <h2>
+        DDU-GKY — Deen Dayal Upadhyaya Grameen Kaushalya Yojana
+        <small>Rural Skills Programme</small>
+      </h2>
+    </div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Rural Development</span>
+
+      <div class="desc en">DDU-GKY is a placement-linked skill training program exclusively for rural poor youth. It provides free residential training, food, accommodation, and placement in regular jobs with minimum wages. The focus is on socially and economically disadvantaged sections.</div>
+      <div class="desc te">DDU-GKY గ్రామీణ పేద యువకుల కోసం ప్రత్యేకంగా ప్లేస్‌మెంట్-అనుసంధానిత నైపుణ్య శిక్షణ కార్యక్రమం. ఇది ఉచిత నివాస శిక్షణ, ఆహారం, వసతి మరియు కనీస వేతనాలతో సాధారణ ఉద్యోగాలలో ప్లేస్‌మెంట్ అందిస్తుంది.</div>
+
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en">
+        <li>Age between 15 to 35 years (45 years for women, SC/ST, PwD)</li>
+        <li>Must belong to a rural poor household</li>
+        <li>Household must be registered in SECC (Socio Economic Caste Census) data</li>
+        <li>Willing to take up regular employment after training</li>
+        <li>Priority to SC/ST, minorities, women, and persons with disabilities</li>
+      </ul>
+      <ul class="elig-list te">
+        <li>వయస్సు 15 నుండి 35 సంవత్సరాల మధ్య (మహిళలు, SC/ST, వికలాంగులకు 45 సంవత్సరాలు)</li>
+        <li>గ్రామీణ పేద కుటుంబానికి చెందిన వారై ఉండాలి</li>
+        <li>కుటుంబం SECC (సామాజిక ఆర్థిక కుల గణన) డేటాలో నమోదై ఉండాలి</li>
+        <li>శిక్షణ తర్వాత సాధారణ ఉపాధి తీసుకోవడానికి సిద్ధంగా ఉండాలి</li>
+        <li>SC/ST, మైనారిటీలు, మహిళలు మరియు వికలాంగులకు ప్రాధాన్యత</li>
+      </ul>
+
+      <a class="official-link" href="https://ddugky.gov.in" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        <span class="en">Visit Official Portal — ddugky.gov.in</span>
+        <span class="te">అధికారిక పోర్టల్ సందర్శించండి — ddugky.gov.in</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── SCHEME 5: NRLM / DAY-NRLM ── -->
+  <div class="scheme" id="day-nrlm">
+    <div class="scheme-head">
+      <div class="scheme-num">5</div>
+      <h2>
+        DAY-NRLM — Deendayal Antyodaya Yojana
+        <small>National Rural Livelihoods Mission</small>
+      </h2>
+    </div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Rural Development</span>
+
+      <div class="desc en">DAY-NRLM mobilises rural poor households into Self Help Groups (SHGs) and provides them access to financial services, skill training, and market linkages. It aims to eliminate poverty by building strong grassroots institutions of the poor.</div>
+      <div class="desc te">DAY-NRLM గ్రామీణ పేద కుటుంబాలను స్వయం సహాయక బృందాలు (SHGs)గా సమీకరించి వారికి ఆర్థిక సేవలు, నైపుణ్య శిక్షణ మరియు మార్కెట్ అనుసంధానాలకు అవకాశం కల్పిస్తుంది. పేదల బలమైన సంస్థలను నిర్మించడం ద్వారా పేదరికాన్ని నిర్మూలించడం దీని లక్ష్యం.</div>
+
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en">
+        <li>Must belong to a rural poor household (BPL category)</li>
+        <li>Priority to women from poor families</li>
+        <li>SC/ST households get special priority</li>
+        <li>Must be willing to join a Self Help Group (SHG)</li>
+        <li>Household must be in SECC database or identified by Gram Sabha</li>
+      </ul>
+      <ul class="elig-list te">
+        <li>గ్రామీణ పేద కుటుంబానికి (BPL వర్గం) చెందిన వారై ఉండాలి</li>
+        <li>పేద కుటుంబాల మహిళలకు ప్రాధాన్యత</li>
+        <li>SC/ST కుటుంబాలకు ప్రత్యేక ప్రాధాన్యత</li>
+        <li>స్వయం సహాయక బృందంలో (SHG) చేరడానికి సిద్ధంగా ఉండాలి</li>
+        <li>కుటుంబం SECC డేటాబేస్‌లో ఉండాలి లేదా గ్రామ సభ గుర్తించాలి</li>
+      </ul>
+
+      <a class="official-link" href="https://aajeevika.gov.in" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        <span class="en">Visit Official Portal — aajeevika.gov.in</span>
+        <span class="te">అధికారిక పోర్టల్ సందర్శించండి — aajeevika.gov.in</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── SCHEME 6: SVAMITVA ── -->
+  <div class="scheme" id="standup-india">
+    <div class="scheme-head">
+      <div class="scheme-num">6</div>
+      <h2>
+        Stand-Up India Scheme
+        <small>Entrepreneurship for SC/ST and Women</small>
+      </h2>
+    </div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of Finance / SIDBI</span>
+
+      <div class="desc en">Stand-Up India facilitates bank loans between ₹10 lakh and ₹1 crore to at least one SC/ST borrower and one woman borrower per bank branch for setting up greenfield enterprises in manufacturing, services, or trading sectors in rural and semi-urban areas.</div>
+      <div class="desc te">స్టాండ్-అప్ ఇండియా గ్రీన్‌ఫీల్డ్ సంస్థలను స్థాపించడానికి ప్రతి బ్యాంక్ శాఖకు కనీసం ఒక SC/ST రుణగ్రహీత మరియు ఒక మహిళా రుణగ్రహీతకు ₹10 లక్షల నుండి ₹1 కోటి వరకు బ్యాంకు రుణాలను సులభతరం చేస్తుంది.</div>
+
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en">
+        <li>SC/ST or Women entrepreneurs only</li>
+        <li>Age 18 years or above</li>
+        <li>Must be setting up a new (greenfield) enterprise</li>
+        <li>Business should be in manufacturing, services, or trading</li>
+        <li>Borrower should not be in default with any bank or financial institution</li>
+        <li>10% promoter contribution required</li>
+      </ul>
+      <ul class="elig-list te">
+        <li>SC/ST లేదా మహిళా వ్యవస్థాపకులు మాత్రమే</li>
+        <li>వయస్సు 18 సంవత్సరాలు లేదా అంతకంటే ఎక్కువ</li>
+        <li>కొత్త (గ్రీన్‌ఫీల్డ్) సంస్థను స్థాపించాలి</li>
+        <li>వ్యాపారం తయారీ, సేవలు లేదా వ్యాపారంలో ఉండాలి</li>
+        <li>రుణగ్రహీత ఏ బ్యాంకు లేదా ఆర్థిక సంస్థకు డిఫాల్ట్‌లో ఉండకూడదు</li>
+        <li>10% ప్రమోటర్ సహకారం అవసరం</li>
+      </ul>
+
+      <a class="official-link" href="https://www.standupmitra.in" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        <span class="en">Visit Official Portal — standupmitra.in</span>
+        <span class="te">అధికారిక పోర్టల్ సందర్శించండి — standupmitra.in</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── SCHEME 7: PMEGP ── -->
+  <div class="scheme" id="pmegp">
+    <div class="scheme-head">
+      <div class="scheme-num">7</div>
+      <h2>
+        PMEGP — PM Employment Generation Programme
+        <small>Self-Employment through Micro Enterprises</small>
+      </h2>
+    </div>
+    <div class="scheme-body">
+      <span class="ministry">Ministry of MSME / KVIC</span>
+
+      <div class="desc en">PMEGP is a credit-linked subsidy programme that helps unemployed youth and traditional artisans set up micro enterprises in rural areas. It provides subsidy of 25–35% on project cost. Maximum project cost is ₹50 lakh for manufacturing and ₹20 lakh for service sector.</div>
+      <div class="desc te">PMEGP ఒక క్రెడిట్-లింక్డ్ సబ్సిడీ కార్యక్రమం, ఇది నిరుద్యోగ యువకులు మరియు సంప్రదాయ చేతివృత్తుల వారికి గ్రామీణ ప్రాంతాలలో మైక్రో సంస్థలను స్థాపించడంలో సహాయపడుతుంది. ప్రాజెక్ట్ వ్యయంపై 25–35% సబ్సిడీ అందిస్తుంది. గరిష్ట ప్రాజెక్ట్ వ్యయం తయారీకి ₹50 లక్షలు మరియు సేవా రంగానికి ₹20 లక్షలు.</div>
+
+      <div class="elig-title">✅ <span class="en">Eligibility Criteria</span><span class="te">అర్హత ప్రమాణాలు</span></div>
+      <ul class="elig-list en">
+        <li>Age 18 years or above</li>
+        <li>Minimum 8th class pass for projects above ₹10 lakh</li>
+        <li>No income ceiling for assistance under the scheme</li>
+        <li>Existing units or units that have already availed government subsidy are NOT eligible</li>
+        <li>Priority to weaker sections: SC/ST, OBC, women, minorities, ex-servicemen, differently abled</li>
+        <li>Must apply through KVIC, KVIB, or District Industries Centre (DIC)</li>
+      </ul>
+      <ul class="elig-list te">
+        <li>వయస్సు 18 సంవత్సరాలు లేదా అంతకంటే ఎక్కువ</li>
+        <li>₹10 లక్షలకు పైబడిన ప్రాజెక్టులకు కనీసం 8వ తరగతి పాస్</li>
+        <li>పథకం కింద సహాయానికి ఆదాయ పరిమితి లేదు</li>
+        <li>ఇప్పటికే ఉన్న యూనిట్లు లేదా ప్రభుత్వ సబ్సిడీ పొందిన యూనిట్లు అర్హత కలిగి ఉండవు</li>
+        <li>బలహీన వర్గాలకు ప్రాధాన్యత: SC/ST, OBC, మహిళలు, మైనారిటీలు, మాజీ సైనికులు, వికలాంగులు</li>
+        <li>KVIC, KVIB లేదా జిల్లా పరిశ్రమల కేంద్రం (DIC) ద్వారా దరఖాస్తు చేసుకోవాలి</li>
+      </ul>
+
+      <a class="official-link" href="https://www.kviconline.gov.in/pmegpeportal" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        <span class="en">Visit Official Portal — kviconline.gov.in</span>
+        <span class="te">అధికారిక పోర్టల్ సందర్శించండి — kviconline.gov.in</span>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<footer style="background:#0d2a5e; color:rgba(255,255,255,0.65); margin-top:10px;">
+  <div style="max-width:1100px; margin:auto; padding:24px 20px; text-align:center;">
+    <p style="font-size:12px; line-height:1.7;">
+      <strong style="color:white;">Lakireddy Balireddy College of Engineering (LBRCE)</strong> · Mylavaram, Andhra Pradesh<br>
+      <span style="font-size:11px; color:rgba(255,255,255,0.45);">Information is for awareness only. Always verify and apply through official government portals.</span>
+    </p>
+    <div style="margin-top:12px;">
+      <a href="index.html" style="color:#93bcf5; font-size:12px; margin: 0 10px;">Home</a>
+      <a href="index.html#categories" style="color:#93bcf5; font-size:12px; margin: 0 10px;">All Schemes</a>
+      <a href="helplines.html" style="color:#93bcf5; font-size:12px; margin: 0 10px;">Helplines</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var lang = localStorage.getItem("lang") || "en";
+setLang(lang);
+
+function setLang(l) {
+  lang = l;
+  localStorage.setItem("lang", l);
+  if (l === "te") {
+    document.body.classList.add("telugu");
+  } else {
+    document.body.classList.remove("telugu");
+  }
+  document.getElementById("bEN").className = (l === "en") ? "on" : "";
+  document.getElementById("bTE").className = (l === "te") ? "on" : "";
+}
+</script>
+</body>
+</html>

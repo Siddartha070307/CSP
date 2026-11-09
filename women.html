@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women Safety Schemes — LBRCE</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f4f7fc;color:#0d1b35}
+a{text-decoration:none;color:inherit}
+.en{display:block}.te{display:none}
+span.en{display:inline}span.te{display:none}
+body.telugu .en{display:none}body.telugu .te{display:block}
+body.telugu span.en{display:none}body.telugu span.te{display:inline}
+body.telugu{font-family:'Noto Sans Telugu','DM Sans',sans-serif}
+.banner{background:#0d2a5e;color:#cde;text-align:center;padding:7px;font-size:12px}
+.banner em{color:#93bcf5;font-style:normal}
+header{background:#1a3f8f;border-bottom:4px solid #2558c8;position:sticky;top:0;z-index:9}
+.hrow{max-width:1100px;margin:auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:12px}
+.logo{color:white;font-weight:700;font-size:15px;line-height:1.3}
+.logo small{display:block;font-size:10px;color:rgba(255,255,255,0.5);font-weight:400}
+nav a{color:rgba(255,255,255,0.78);font-size:13px;padding:6px 10px;border-radius:5px}
+nav a:hover{background:rgba(255,255,255,0.12)}
+nav a.active{background:rgba(255,255,255,0.18);color:white;font-weight:600}
+.ltbtn{display:flex;gap:4px;margin-left:auto}
+.ltbtn button{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.2);padding:4px 11px;border-radius:14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.ltbtn button.on{background:white;color:#1a3f8f}
+.hero{background:#6a1a6e;color:white;text-align:center;padding:40px 20px 55px}
+.hero-label{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:4px 14px;border-radius:4px;font-size:11px;letter-spacing:0.5px;text-transform:uppercase;display:inline-block;margin-bottom:14px}
+.hero h1{font-size:2rem;margin-bottom:8px}
+.hero p{color:rgba(255,255,255,0.72);font-size:14px}
+.wave{height:40px;background:#f4f7fc;clip-path:ellipse(55% 100% at 50% 100%);margin-top:-2px}
+main{max-width:1100px;margin:auto;padding:0 20px 50px}
+.intro{background:#f9eeff;border:1.5px solid #e8d0f0;border-radius:12px;padding:16px 20px;margin:24px 0 8px}
+.intro p{font-size:13.5px;color:#4a5a7a;line-height:1.6}
+.scheme{background:white;border:1.5px solid #c8d8f0;border-radius:14px;margin:20px 0;overflow:hidden}
+.scheme-head{background:#6a1a6e;color:white;padding:16px 20px;display:flex;align-items:center;gap:12px}
+.snum{background:rgba(255,255,255,0.18);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.sht h2{font-size:1rem;font-weight:700;line-height:1.3}
+.sht p{font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px}
+.scheme-body{padding:18px 20px}
+.tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.tab{padding:5px 13px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid #c8d8f0;background:white;color:#4a5a7a}
+.tab.active{background:#6a1a6e;color:white;border-color:#6a1a6e}
+.block{display:none}.block.show{display:block}
+.overview{font-size:13.5px;color:#4a5a7a;line-height:1.65}
+.overview strong{color:#0d1b35}
+.elig-title{font-size:13px;font-weight:700;color:#3d0a40;margin-bottom:8px}
+.elig-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.elig-list li{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5}
+.elig-list li::before{content:"✓";background:#f9eeff;color:#6a1a6e;font-weight:700;font-size:11px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.bitem{background:#f9eeff;border-radius:8px;padding:12px 14px}
+.bval{font-size:1rem;font-weight:700;color:#3d0a40}
+.bkey{font-size:11px;color:#4a5a7a;margin-top:2px}
+.olink{display:inline-flex;align-items:center;gap:8px;background:#6a1a6e;color:white;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:600;margin-top:12px}
+.olink:hover{background:#3d0a40}
+footer{background:#0d2a5e;color:rgba(255,255,255,0.65);margin-top:10px}
+.frow{max-width:1100px;margin:auto;padding:24px 20px}
+.fn{font-size:1rem;font-weight:700;color:white}
+.fc{font-size:11px;color:#93bcf5;margin-top:4px}
+.fdis{font-size:11px;color:rgba(255,255,255,0.42);margin-top:8px}
+.fbot{text-align:center;padding:10px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;color:rgba(255,255,255,0.3)}
+
+html{scroll-padding-top:100px}.scheme:target{box-shadow:0 0 0 3px #f29f05}
+</style>
+</head>
+<body>
+<div class="banner">An initiative by <em>Lakireddy Balireddy College of Engineering (LBRCE)</em>, Mylavaram, Andhra Pradesh</div>
+<header>
+  <div class="hrow">
+    <a href="index.html" class="logo"><span class="en">Rural Schemes Portal</span><span class="te">గ్రామీణ పథకాల పోర్టల్</span><small>LBRCE Initiative · Mylavaram, AP</small></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#categories">All Schemes</a>
+      <a href="women.html" class="active">Women Safety</a>
+      <a href="helplines.html">Helplines</a>
+    </nav>
+    <div class="ltbtn">
+      <button id="bEN" class="on" onclick="setLang('en')">EN</button>
+      <button id="bTE" onclick="setLang('te')">తె</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-label">👩 <span class="en">Women Safety &amp; Empowerment Schemes</span><span class="te">మహిళా భద్రత &amp; సాధికారత పథకాలు</span></div>
+  <h1 class="en">Women Security Schemes for Rural India</h1>
+  <h1 class="te">గ్రామీణ భారత్‌లో మహిళా భద్రతా పథకాలు</h1>
+  <p class="en">7 government schemes protecting and empowering women in rural areas</p>
+  <p class="te">గ్రామీణ ప్రాంతాల్లో మహిళలను రక్షించే మరియు సాధికారత కల్పించే 7 ప్రభుత్వ పథకాలు</p>
+</div>
+<div class="wave"></div>
+
+<main>
+  <div class="intro">
+    <p class="en">All 7 schemes below are actively implemented across rural India. Click any tab on each scheme to view overview, eligibility criteria, benefits, and the official government link.</p>
+    <p class="te">క్రింది 7 పథకాలు గ్రామీణ భారత్‌లో అమలులో ఉన్నాయి. అవలోకనం, అర్హత, ప్రయోజనాలు మరియు అధికారిక లింక్ చూడటానికి ట్యాబ్‌పై క్లిక్ చేయండి.</p>
+  </div>
+
+  <div class="scheme" id="sakhi">
+    <div class="scheme-head"><div class="snum">1</div><div class="sht"><h2><span class="en">One Stop Centre (Sakhi) — Support for Violence-Affected Women</span><span class="te">వన్ స్టాప్ సెంటర్ (సఖి) — హింసకు గురైన మహిళలకు సహాయం</span></h2><p><span class="en">Ministry of Women &amp; Child Development</span><span class="te">మహిళా మరియు శిశు అభివృద్ధి మంత్రిత్వ శాఖ</span></p></div></div>
+    <div class="scheme-body">
+      <div class="tabs">
+        <div class="tab active" onclick="showTab(this,'s1','ov')"><span class="en">Overview</span><span class="te">అవలోకనం</span></div>
+        <div class="tab" onclick="showTab(this,'s1','el')"><span class="en">Eligibility</span><span class="te">అర్హత</span></div>
+        <div class="tab" onclick="showTab(this,'s1','bn')"><span class="en">Benefits</span><span class="te">ప్రయోజనాలు</span></div>
+        <div class="tab" onclick="showTab(this,'s1','lk')"><span class="en">Official Link</span><span class="te">అధికారిక లింక్</span></div>
+      </div>
+      <div id="s1-ov" class="block show"><p class="overview en">One Stop Centres provide <strong>integrated support services</strong> — medical, legal, police and shelter — under one roof to women affected by violence. Available 24×7 in every district.</p><p class="overview te">వన్ స్టాప్ సెంటర్లు హింసకు గురైన మహిళలకు వైద్య, న్యాయ, పోలీస్ మరియు ఆశ్రయం వంటి <strong>సమగ్ర సేవలు</strong> ఒకే చోట 24×7 అందిస్తాయి.</p></div>
+      <div id="s1-el" class="block"><p class="elig-title en">Eligibility Criteria</p><p class="elig-title te">అర్హత నిబంధనలు</p><ul class="elig-list en"><li>Any woman affected by violence — domestic, sexual, trafficking</li><li>All age groups — minors assisted through child protection</li><li>No proof required to access emergency services</li><li>Available across rural and urban India</li></ul><ul class="elig-list te"><li>గృహ హింస, లైంగిక హింస, అక్రమ రవాణాకు గురైన ఏ మహిళైనా</li><li>అన్ని వయసుల మహిళలకు — మైనర్లకు శిశు రక్షణ ద్వారా సహాయం</li><li>అత్యవసర సేవలకు ఎటువంటి రుజువు అవసరం లేదు</li><li>గ్రామీణ మరియు పట్టణ భారతదేశం అంతటా అందుబాటులో ఉంటుంది</li></ul></div>
+      <div id="s1-bn" class="block"><div class="bgrid"><div class="bitem"><div class="bval">Medical</div><div class="bkey en">Emergency medical care</div><div class="bkey te">అత్యవసర వైద్య సేవ</div></div><div class="bitem"><div class="bval">Legal</div><div class="bkey en">Free legal aid &amp; counsel</div><div class="bkey te">ఉచిత న్యాయ సహాయం</div></div><div class="bitem"><div class="bval">Shelter</div><div class="bkey en">5-day temporary shelter</div><div class="bkey te">5 రోజుల తాత్కాలిక ఆశ్రయం</div></div><div class="bitem"><div class="bval">24×7</div><div class="bkey en">Round-the-clock support</div><div class="bkey te">నిరంతర సహాయం</div></div></div></div>
+      <div id="s1-lk" class="block"><p class="overview en">Call <strong>181</strong> (Women Helpline) or visit:</p><p class="overview te"><strong>181</strong> (మహిళా హెల్ప్‌లైన్) కి కాల్ చేయండి లేదా సందర్శించండి:</p><a class="olink" href="https://wcd.nic.in/schemes/one-stop-centre-scheme" target="_blank" rel="noopener">🔗 wcd.nic.in ↗</a></div>
+    </div>
+  </div>
+
+  <div class="scheme" id="bbbp">
+    <div class="scheme-head"><div class="snum">2</div><div class="sht"><h2><span class="en">Beti Bachao Beti Padhao — Save Daughter, Educate Daughter</span><span class="te">బేటీ బచావో బేటీ పఢావో — కూతురిని కాపాడండి, చదివించండి</span></h2><p><span class="en">Ministry of Women &amp; Child Development</span><span class="te">మహిళా మరియు శిశు అభివృద్ధి మంత్రిత్వ శాఖ</span></p></div></div>
+    <div class="scheme-body">
+      <div class="tabs">
+        <div class="tab active" onclick="showTab(this,'s2','ov')"><span class="en">Overview</span><span class="te">అవలోకనం</span></div>
+        <div class="tab" onclick="showTab(this,'s2','el')"><span class="en">Eligibility</span><span class="te">అర్హత</span></div>
+        <div class="tab" onclick="showTab(this,'s2','bn')"><span class="en">Benefits</span><span class="te">ప్రయోజనాలు</span></div>
+        <div class="tab" onclick="showTab(this,'s2','lk')"><span class="en">Official Link</span><span class="te">అధికారిక లింక్</span></div>
+      </div>
+      <div id="s2-ov" class="block show"><p class="overview en">BBBP addresses the <strong>declining child sex ratio</strong> and promotes education and welfare of the girl child across India, especially in low sex-ratio districts.</p><p class="overview te">BBBP భారతదేశంలో తగ్గుతున్న <strong>శిశు లింగ నిష్పత్తిని</strong> పరిష్కరిస్తుంది మరియు బాలికల విద్య మరియు సంక్షేమాన్ని ప్రోత్సహిస్తుంది.</p></div>
+      <div id="s2-el" class="block"><p class="elig-title en">Eligibility Criteria</p><p class="elig-title te">అర్హత నిబంధనలు</p><ul class="elig-list en"><li>Girl child from birth to 18 years</li><li>All families — no income limit</li><li>Priority in districts with low sex ratio</li><li>Available across all states in India</li></ul><ul class="elig-list te"><li>జన్మ నుండి 18 సంవత్సరాల వరకు బాలిక</li><li>అన్ని కుటుంబాలకు — ఆదాయ పరిమితి లేదు</li><li>తక్కువ లింగ నిష్పత్తి గల జిల్లాల్లో ప్రాధాన్యత</li><li>భారతదేశంలోని అన్ని రాష్ట్రాల్లో అందుబాటులో ఉంటుంది</li></ul></div>
+      <div id="s2-bn" class="block"><div class="bgrid"><div class="bitem"><div class="bval">Education</div><div class="bkey en">Girl child school enrolment</div><div class="bkey te">బాలికల పాఠశాల నమోదు</div></div><div class="bitem"><div class="bval">Awareness</div><div class="bkey en">Anti sex-selection campaigns</div><div class="bkey te">లింగ ఎంపిక వ్యతిరేక అవగాహన</div></div><div class="bitem"><div class="bval">Health</div><div class="bkey en">Nutrition &amp; immunisation</div><div class="bkey te">పోషణ మరియు టీకాలు</div></div><div class="bitem"><div class="bval">Welfare</div><div class="bkey en">Convergence of govt schemes</div><div class="bkey te">ప్రభుత్వ పథకాల సమ్మేళనం</div></div></div></div>
+      <div id="s2-lk" class="block"><p class="overview en">Visit the official portal:</p><p class="overview te">అధికారిక పోర్టల్ సందర్శించండి:</p><a class="olink" href="https://wcd.nic.in/bbbp-schemes" target="_blank" rel="noopener">🔗 wcd.nic.in/bbbp ↗</a></div>
+    </div>
+  </div>
+
+  <div class="scheme" id="sukanya-samriddhi">
+    <div class="scheme-head"><div class="snum">3</div><div class="sht"><h2><span class="en">Sukanya Samriddhi Yojana — Girl Child Savings Scheme</span><span class="te">సుకన్య సమృద్ధి యోజన — బాలికల పొదుపు పథకం</span></h2><p><span class="en">Ministry of Finance, Govt. of India</span><span class="te">ఆర్థిక మంత్రిత్వ శాఖ, భారత ప్రభుత్వం</span></p></div></div>
+    <div class="scheme-body">
+      <div class="tabs">
+        <div class="tab active" onclick="showTab(this,'s3','ov')"><span class="en">Overview</span><span class="te">అవలోకనం</span></div>
+        <div class="tab" onclick="showTab(this,'s3','el')"><span class="en">Eligibility</span><span class="te">అర్హత</span></div>
+        <div class="tab" onclick="showTab(this,'s3','bn')"><span class="en">Benefits</span><span class="te">ప్రయోజనాలు</span></div>
+        <div class="tab" onclick="showTab(this,'s3','lk')"><span class="en">Official Link</span><span class="te">అధికారిక లింక్</span></div>
+      </div>
+      <div id="s3-ov" class="block show"><p class="overview en">SSY is a <strong>high-interest government savings scheme</strong> for girl children. Parents open an account at any post office or bank. Funds can be used for higher education and marriage expenses.</p><p class="overview te">SSY బాలికల కోసం <strong>అధిక వడ్డీ ప్రభుత్వ పొదుపు పథకం</strong>. తల్లిదండ్రులు ఏ పోస్ట్ ఆఫీసు లేదా బ్యాంకులోనైనా ఖాతా తెరవగలరు. ఉన్నత విద్య మరియు వివాహ ఖర్చులకు వినియోగించవచ్చు.</p></div>
+      <div id="s3-el" class="block"><p class="elig-title en">Eligibility Criteria</p><p class="elig-title te">అర్హత నిబంధనలు</p><ul class="elig-list en"><li>Girl child below 10 years of age</li><li>Maximum 2 accounts per family (one per girl child)</li><li>Account opened by parent or legal guardian</li><li>Indian citizen — available in rural areas via post offices</li></ul><ul class="elig-list te"><li>10 సంవత్సరాల లోపు బాలిక</li><li>ఒక కుటుంబంలో గరిష్టం 2 ఖాతాలు (ఒక్కో బాలికకు ఒకటి)</li><li>తల్లిదండ్రులు లేదా చట్టపరమైన సంరక్షకుడు ఖాతా తెరవాలి</li><li>భారత పౌరులు — పోస్ట్ ఆఫీసుల ద్వారా గ్రామీణ ప్రాంతాల్లో అందుబాటు</li></ul></div>
+      <div id="s3-bn" class="block"><div class="bgrid"><div class="bitem"><div class="bval">8.2%</div><div class="bkey en">Annual interest (tax-free)</div><div class="bkey te">వార్షిక వడ్డీ (పన్ను రహిత)</div></div><div class="bitem"><div class="bval">₹250</div><div class="bkey en">Min deposit per year</div><div class="bkey te">కనీస వార్షిక డిపాజిట్</div></div><div class="bitem"><div class="bval">21 yrs</div><div class="bkey en">Account matures at 21 years</div><div class="bkey te">21 సంవత్సరాలకు పరిపక్వత</div></div><div class="bitem"><div class="bval">Tax Free</div><div class="bkey en">80C tax deduction benefit</div><div class="bkey te">80C పన్ను మినహాయింపు</div></div></div></div>
+      <div id="s3-lk" class="block"><p class="overview en">Open account at nearest Post Office or visit:</p><p class="overview te">సమీపంలోని పోస్ట్ ఆఫీసులో ఖాతా తెరవండి లేదా సందర్శించండి:</p><a class="olink" href="https://www.indiapost.gov.in/Financial/Pages/Content/Sukanya-Samridhi-Yojna.aspx" target="_blank" rel="noopener">🔗 indiapost.gov.in ↗</a></div>
+    </div>
+  </div>
+
+  <div class="scheme" id="mahila-shakti-kendra">
+    <div class="scheme-head"><div class="snum">4</div><div class="sht"><h2><span class="en">Mahila Shakti Kendra — Empowering Rural Women</span><span class="te">మహిళా శక్తి కేంద్రం — గ్రామీణ మహిళల సాధికారత</span></h2><p><span class="en">Ministry of Women &amp; Child Development</span><span class="te">మహిళా మరియు శిశు అభివృద్ధి మంత్రిత్వ శాఖ</span></p></div></div>
+    <div class="scheme-body">
+      <div class="tabs">
+        <div class="tab active" onclick="showTab(this,'s4','ov')"><span class="en">Overview</span><span class="te">అవలోకనం</span></div>
+        <div class="tab" onclick="showTab(this,'s4','el')"><span class="en">Eligibility</span><span class="te">అర్హత</span></div>
+        <div class="tab" onclick="showTab(this,'s4','bn')"><span class="en">Benefits</span><span class="te">ప్రయోజనాలు</span></div>
+        <div class="tab" onclick="showTab(this,'s4','lk')"><span class="en">Official Link</span><span class="te">అధికారిక లింక్</span></div>
+      </div>
+      <div id="s4-ov" class="block show"><p class="overview en">Mahila Shakti Kendras provide <strong>community engagement and empowerment</strong> through student volunteers (BETI — Betterment, Education, Training &amp; Income). They operate at block level in rural areas.</p><p class="overview te">మహిళా శక్తి కేంద్రాలు విద్యార్థి వాలంటీర్ల ద్వారా గ్రామీణ మహిళలకు <strong>కమ్యూనిటీ నిశ్చితార్థం మరియు సాధికారత</strong> కల్పిస్తాయి. బ్లాక్ స్థాయిలో గ్రామీణ ప్రాంతాల్లో పని చేస్తాయి.</p></div>
+      <div id="s4-el" class="block"><p class="elig-title en">Eligibility Criteria</p><p class="elig-title te">అర్హత నిబంధనలు</p><ul class="elig-list en"><li>All rural women — no age or income bar</li><li>Special focus on women from SC/ST, minority communities</li><li>Available in 640+ aspirational districts across India</li><li>Women can approach local Anganwadi or Block office</li></ul><ul class="elig-list te"><li>అన్ని గ్రామీణ మహిళలకు — వయో లేదా ఆదాయ పరిమితి లేదు</li><li>SC/ST, మైనారిటీ వర్గాల మహిళలపై ప్రత్యేక దృష్టి</li><li>భారతదేశంలోని 640+ ఆకాంక్షా జిల్లాల్లో అందుబాటు</li><li>మహిళలు స్థానిక అంగన్‌వాడీ లేదా బ్లాక్ కార్యాలయాన్ని సంప్రదించవచ్చు</li></ul></div>
+      <div id="s4-bn" class="block"><div class="bgrid"><div class="bitem"><div class="bval">Training</div><div class="bkey en">Skill &amp; vocational training</div><div class="bkey te">నైపుణ్య మరియు వృత్తి శిక్షణ</div></div><div class="bitem"><div class="bval">Health</div><div class="bkey en">Nutrition &amp; health awareness</div><div class="bkey te">పోషణ మరియు ఆరోగ్య అవగాహన</div></div><div class="bitem"><div class="bval">Rights</div><div class="bkey en">Legal rights awareness</div><div class="bkey te">చట్టపరమైన హక్కుల అవగాహన</div></div><div class="bitem"><div class="bval">Digital</div><div class="bkey en">Digital literacy support</div><div class="bkey te">డిజిటల్ అక్షరాస్యత సహాయం</div></div></div></div>
+      <div id="s4-lk" class="block"><p class="overview en">Contact your local Anganwadi or visit:</p><p class="overview te">స్థానిక అంగన్‌వాడీని సంప్రదించండి లేదా సందర్శించండి:</p><a class="olink" href="https://wcd.nic.in/schemes/mahila-shakti-kendra-msk" target="_blank" rel="noopener">🔗 wcd.nic.in/msk ↗</a></div>
+    </div>
+  </div>
+
+
+  <div class="scheme" id="ujjwala">
+    <div class="scheme-head"><div class="snum">5</div><div class="sht"><h2><span class="en">PM Ujjwala Yojana — Clean Cooking Fuel for Rural Women</span><span class="te">పిఎం ఉజ్జ్వల యోజన — గ్రామీణ మహిళలకు స్వచ్ఛ వంట ఇంధనం</span></h2><p><span class="en">Ministry of Petroleum &amp; Natural Gas</span><span class="te">పెట్రోలియం మరియు సహజ వాయువు మంత్రిత్వ శాఖ</span></p></div></div>
+    <div class="scheme-body">
+      <div class="tabs">
+        <div class="tab active" onclick="showTab(this,'s5','ov')"><span class="en">Overview</span><span class="te">అవలోకనం</span></div>
+        <div class="tab" onclick="showTab(this,'s5','el')"><span class="en">Eligibility</span><span class="te">అర్హత</span></div>
+        <div class="tab" onclick="showTab(this,'s5','bn')"><span class="en">Benefits</span><span class="te">ప్రయోజనాలు</span></div>
+        <div class="tab" onclick="showTab(this,'s5','lk')"><span class="en">Official Link</span><span class="te">అధికారిక లింక్</span></div>
+      </div>
+      <div id="s5-ov" class="block show"><p class="overview en">PMUY provides <strong>free LPG connections</strong> to women from BPL households so they no longer need to use firewood or coal, protecting their health and safety while reducing indoor pollution.</p><p class="overview te">PMUY BPL కుటుంబాల మహిళలకు <strong>ఉచిత LPG కనెక్షన్లు</strong> అందిస్తుంది. దీంతో వారు కట్టెలు లేదా బొగ్గు వాడాల్సిన అవసరం ఉండదు. వారి ఆరోగ్యం మరియు భద్రత రక్షించబడతాయి.</p></div>
+      <div id="s5-el" class="block"><p class="elig-title en">Eligibility Criteria</p><p class="elig-title te">అర్హత నిబంధనలు</p><ul class="elig-list en"><li>Woman above 18 years from a BPL household</li><li>Must not already have an LPG connection in the household</li><li>Listed in SECC-2011 data or BPL list</li><li>Aadhaar and bank account required</li></ul><ul class="elig-list te"><li>BPL కుటుంబంలో 18 సంవత్సరాలు పైన ఉన్న మహిళ</li><li>కుటుంబంలో LPG కనెక్షన్ ఇప్పటికే ఉండకూడదు</li><li>SECC-2011 డేటా లేదా BPL జాబితాలో నమోదై ఉండాలి</li><li>ఆధార్ మరియు బ్యాంకు ఖాతా అవసరం</li></ul></div>
+      <div id="s5-bn" class="block"><div class="bgrid"><div class="bitem"><div class="bval">Free</div><div class="bkey en">Free LPG connection</div><div class="bkey te">ఉచిత LPG కనెక్షన్</div></div><div class="bitem"><div class="bval">₹1600</div><div class="bkey en">Security deposit covered</div><div class="bkey te">భద్రతా డిపాజిట్ భరించబడుతుంది</div></div><div class="bitem"><div class="bval">Subsidy</div><div class="bkey en">First refill free for BPL</div><div class="bkey te">BPL కు మొదటి రీఫిల్ ఉచితం</div></div><div class="bitem"><div class="bval">Health</div><div class="bkey en">Reduces indoor air pollution</div><div class="bkey te">ఇంట్లో వాయు కాలుష్యం తగ్గుతుంది</div></div></div></div>
+      <div id="s5-lk" class="block"><p class="overview en">Apply at your nearest LPG distributor or visit:</p><p class="overview te">సమీపంలోని LPG డిస్ట్రిబ్యూటర్ వద్ద దరఖాస్తు చేయండి లేదా సందర్శించండి:</p><a class="olink" href="https://www.pmujjwalayojana.com" target="_blank" rel="noopener">🔗 pmujjwalayojana.com ↗</a></div>
+    </div>
+  </div>
+
+
+  <div class="scheme" id="janani-suraksha">
+    <div class="scheme-head"><div class="snum">6</div><div class="sht"><h2><span class="en">Janani Suraksha Yojana — Safe Motherhood for Rural Women</span><span class="te">జననీ సురక్ష యోజన — గ్రామీణ మహిళలకు సురక్షిత మాతృత్వం</span></h2><p><span class="en">Ministry of Health &amp; Family Welfare</span><span class="te">ఆరోగ్య మరియు కుటుంబ సంక్షేమ మంత్రిత్వ శాఖ</span></p></div></div>
+    <div class="scheme-body">
+      <div class="tabs">
+        <div class="tab active" onclick="showTab(this,'s6','ov')"><span class="en">Overview</span><span class="te">అవలోకనం</span></div>
+        <div class="tab" onclick="showTab(this,'s6','el')"><span class="en">Eligibility</span><span class="te">అర్హత</span></div>
+        <div class="tab" onclick="showTab(this,'s6','bn')"><span class="en">Benefits</span><span class="te">ప్రయోజనాలు</span></div>
+        <div class="tab" onclick="showTab(this,'s6','lk')"><span class="en">Official Link</span><span class="te">అధికారిక లింక్</span></div>
+      </div>
+      <div id="s6-ov" class="block show"><p class="overview en">JSY provides <strong>cash assistance to poor pregnant women</strong> to encourage institutional delivery in hospitals, reducing maternal and infant mortality in rural areas.</p><p class="overview te">JSY పేద గర్భిణీ స్త్రీలకు ఆసుపత్రి ప్రసవాన్ని ప్రోత్సహించడానికి <strong>నగదు సహాయం</strong> అందిస్తుంది. దీంతో గ్రామీణ ప్రాంతాల్లో మాతా శిశు మరణాలు తగ్గుతాయి.</p></div>
+      <div id="s6-el" class="block"><p class="elig-title en">Eligibility Criteria</p><p class="elig-title te">అర్హత నిబంధనలు</p><ul class="elig-list en"><li>Pregnant woman from BPL / SC / ST household</li><li>Age 19 years and above</li><li>Up to 2 live births covered</li><li>Must deliver in a government or accredited private hospital</li></ul><ul class="elig-list te"><li>BPL / SC / ST కుటుంబానికి చెందిన గర్భిణీ స్త్రీ</li><li>వయస్సు 19 సంవత్సరాలు మరియు అంతకంటే ఎక్కువ</li><li>2 సజీవ ప్రసవాల వరకు కవర్ చేయబడుతుంది</li><li>ప్రభుత్వ లేదా అక్రిడిటేషన్ పొందిన ప్రైవేట్ ఆసుపత్రిలో ప్రసవించాలి</li></ul></div>
+      <div id="s6-bn" class="block"><div class="bgrid"><div class="bitem"><div class="bval">₹1400</div><div class="bkey en">Cash for rural delivery (LPS)</div><div class="bkey te">గ్రామీణ ప్రసవానికి నగదు (LPS)</div></div><div class="bitem"><div class="bval">₹600</div><div class="bkey en">ASHA worker incentive</div><div class="bkey te">ఆశా కార్యకర్తకు ప్రోత్సాహకం</div></div><div class="bitem"><div class="bval">Free</div><div class="bkey en">Free delivery in govt hospitals</div><div class="bkey te">ప్రభుత్వ ఆసుపత్రిలో ఉచిత ప్రసవం</div></div><div class="bitem"><div class="bval">Transport</div><div class="bkey en">Free ambulance (108 service)</div><div class="bkey te">ఉచిత అంబులెన్స్ (108 సేవ)</div></div></div></div>
+      <div id="s6-lk" class="block"><p class="overview en">Register with your nearest ASHA worker or PHC. Visit:</p><p class="overview te">సమీపంలోని ఆశా కార్యకర్త లేదా PHCలో నమోదు చేయండి. సందర్శించండి:</p><a class="olink" href="https://nhm.gov.in/index1.php?lang=1&level=3&sublinkid=841&lid=309" target="_blank" rel="noopener">🔗 nhm.gov.in ↗</a></div>
+    </div>
+  </div>
+
+  <div class="scheme" id="nirbhaya">
+    <div class="scheme-head"><div class="snum">7</div><div class="sht"><h2><span class="en">Nirbhaya Fund — Safety Infrastructure for Women</span><span class="te">నిర్భయ నిధి — మహిళల భద్రతా మౌలిక సదుపాయాలు</span></h2><p><span class="en">Ministry of Women &amp; Child Development / MHA</span><span class="te">మహిళా మరియు శిశు అభివృద్ధి మంత్రిత్వ శాఖ / MHA</span></p></div></div>
+    <div class="scheme-body">
+      <div class="tabs">
+        <div class="tab active" onclick="showTab(this,'s7','ov')"><span class="en">Overview</span><span class="te">అవలోకనం</span></div>
+        <div class="tab" onclick="showTab(this,'s7','el')"><span class="en">Eligibility</span><span class="te">అర్హత</span></div>
+        <div class="tab" onclick="showTab(this,'s7','bn')"><span class="en">Benefits</span><span class="te">ప్రయోజనాలు</span></div>
+        <div class="tab" onclick="showTab(this,'s7','lk')"><span class="en">Official Link</span><span class="te">అధికారిక లింక్</span></div>
+      </div>
+      <div id="s7-ov" class="block show"><p class="overview en">The Nirbhaya Fund was set up with <strong>₹1,000 crore</strong> to support initiatives strengthening women's safety — safe city projects, emergency response, CCTV surveillance, panic buttons and fast-track courts.</p><p class="overview te">నిర్భయ నిధి మహిళల భద్రతను బలోపేతం చేసే చొరవలకు <strong>₹1,000 కోట్ల</strong>తో ఏర్పాటు చేయబడింది. సురక్షిత నగర ప్రాజెక్టులు, అత్యవసర స్పందన, CCTV నిఘా, పానిక్ బటన్లు మరియు ఫాస్ట్-ట్రాక్ కోర్టులు ఇందులో భాగం.</p></div>
+      <div id="s7-el" class="block"><p class="elig-title en">Eligibility Criteria</p><p class="elig-title te">అర్హత నిబంధనలు</p><ul class="elig-list en"><li>Any woman in distress can access 112 emergency response</li><li>All women benefit from safety infrastructure created</li><li>Fast-track courts for sexual assault survivors — no age bar</li><li>Women helpline 181 accessible across rural India</li></ul><ul class="elig-list te"><li>కష్టాల్లో ఉన్న ఏ మహిళైనా 112 అత్యవసర సేవ పొందవచ్చు</li><li>అన్ని మహిళలు సృష్టించిన భద్రతా మౌలిక సదుపాయాల నుండి లాభపడతారు</li><li>లైంగిక వేధింపుల బాధితులకు ఫాస్ట్-ట్రాక్ కోర్టులు — వయో పరిమితి లేదు</li><li>181 మహిళా హెల్ప్‌లైన్ గ్రామీణ భారతదేశంలో అందుబాటులో ఉంటుంది</li></ul></div>
+      <div id="s7-bn" class="block"><div class="bgrid"><div class="bitem"><div class="bval">112</div><div class="bkey en">Emergency response number</div><div class="bkey te">అత్యవసర సేవా నంబర్</div></div><div class="bitem"><div class="bval">181</div><div class="bkey en">Women helpline (24×7)</div><div class="bkey te">మహిళా హెల్ప్‌లైన్ (24×7)</div></div><div class="bitem"><div class="bval">Courts</div><div class="bkey en">Fast-track courts for survivors</div><div class="bkey te">బాధితులకు ఫాస్ట్-ట్రాక్ కోర్టులు</div></div><div class="bitem"><div class="bval">Safe City</div><div class="bkey en">CCTV &amp; lighting in rural areas</div><div class="bkey te">CCTV మరియు గ్రామీణ ప్రకాశం</div></div></div></div>
+      <div id="s7-lk" class="block"><p class="overview en">For emergencies call <strong>112</strong> or <strong>181</strong>. For more info visit:</p><p class="overview te">అత్యవసర పరిస్థితుల్లో <strong>112</strong> లేదా <strong>181</strong> కాల్ చేయండి. మరిన్ని వివరాలకు:</p><a class="olink" href="https://wcd.nic.in/nirbhaya" target="_blank" rel="noopener">🔗 wcd.nic.in/nirbhaya ↗</a></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="frow">
+    <div class="fn">Rural Schemes Portal</div>
+    <div class="fc">A Lakireddy Balireddy College of Engineering (LBRCE) Initiative · Mylavaram, AP</div>
+    <div class="fdis">Information is for awareness only. Always apply through official government portals. Emergency: call 112 or 181.</div>
+  </div>
+  <div class="fbot">© 2026 Lakireddy Balireddy College of Engineering (LBRCE) · Rural Schemes Portal</div>
+</footer>
+
+<script>
+var lang = localStorage.getItem("lang") || "en";
+setLang(lang);
+function setLang(l) {
+  lang = l;
+  localStorage.setItem("lang", l);
+  if (l === "te") { document.body.classList.add("telugu"); }
+  else { document.body.classList.remove("telugu"); }
+  document.getElementById("bEN").className = (l === "en") ? "on" : "";
+  document.getElementById("bTE").className = (l === "te") ? "on" : "";
+}
+function showTab(clickedTab, id, tab) {
+  var tabs = clickedTab.parentElement.querySelectorAll(".tab");
+  for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove("active");
+  clickedTab.classList.add("active");
+  var blocks = clickedTab.closest(".scheme-body").querySelectorAll(".block");
+  for (var j = 0; j < blocks.length; j++) blocks[j].classList.remove("show");
+  document.getElementById(id + "-" + tab).classList.add("show");
+}
+</script>
+</body>
+</html>
